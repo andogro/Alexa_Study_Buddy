@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="utf-8">
+  <title>G Study</title>
+  <link rel="stylesheet" href="css/boottheme.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+   <nav ng-include="'components/views/nav.html'"></nav>
+  </header>
+
+  <main ng-view></main>
+
+  <div class="row column">
+    <hr>
+    <ul class="menu">
+    </ul>
+  </div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-sanitize.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="common/app.js"></script>
+<script type="text/javascript" src="common/routes.js"></script>
+
+<!-- user info -->
+<script type="text/javascript" src="components/users/usersController.js"></script>
+
+<!-- decks info -->
+<script type="text/javascript" src="components/quizzes/quizzesController.js"></script>
+<script type="text/javascript" src="components/quizzes/newQuizzesController.js"></script>
+<script type="text/javascript" src="components/quizzes/singleQuizController.js"></script>
+<script type="text/javascript" src="common/crud-service.js"></script>
+
+<!-- to be added later -->
+
+<!-- interceptor info -->
+<!-- <script type="text/javascript" src="components/auth/auth-interceptor-service.js"></script> 
+<script type="text/javascript" src="components/auth/auth-service.js"></script>    -->
+
+<!-- register info -->
+<!-- <script type="text/javascript" src="components/auth/registrationController.js"></script>
+<script type="text/javascript" src="components/auth/registrationService.js"></script> -->
+
+<!-- login info -->
+<!-- <script type="text/javascript" src="components/auth/loginController.js"></script>
+<script type="text/javascript" src="components/auth/loginService.js"></script>
+ -->
+  </body>
+</html>
+

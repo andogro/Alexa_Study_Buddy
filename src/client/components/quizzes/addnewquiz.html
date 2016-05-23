@@ -1,0 +1,19 @@
+
+    <section>  
+        <br>
+        Add a New Quiz
+        <form ng-submit="submit()">
+                  <fieldset class="form-group">
+                    <label for="name">Quiz Name</label>
+                    <input name="quiz_name" type="text" class="form-control" id="quiz_name" ng-model="formData.quiz_name" placeholder="Quiz Name" required >
+                  </fieldset>
+                 
+                 <fieldset class="form-group">
+                   <label for="quiz_desc">Quiz Description</label>
+                   <textarea name="quiz_desc" class="form-control" id="description" ng-model="formData.quiz_description" rows="5" required></textarea>
+                 </fieldset>
+
+                  <button type="submit" class="btn btn-primary">Create!</button>
+              </form>
+
+          </section>    

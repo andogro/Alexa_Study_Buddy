@@ -10,7 +10,7 @@
       console.log('here i am');
      return {
       getQuizById: function(currId) {
-        return $http.get('/quizzes/'+currId)
+        return $http.get('singlequiz/'+currId)
         },
       addQuiz: function(data) {
         return $http.post('/quiz/new', data)
@@ -20,7 +20,8 @@
       },
       getAllQuizzes: function() {
         return $http.get('/quizzes')
-      }      
+      },
+
     }
   }
 })();

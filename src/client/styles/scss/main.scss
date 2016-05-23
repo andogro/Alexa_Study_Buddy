@@ -1,0 +1,27 @@
+@import "bourbon";
+@import "neat";
+@import "bitters/base";
+@import "fonts";
+@import "splash";
+
+$white: #FCFCFC;
+$light-blue: #5D737E;
+$dark-blue: #02111B;
+
+body {
+  background: white;
+}
+
+section {
+  .container {
+      @include outer-container; 
+    
+    .aside { 
+    @include span-columns(4); 
+    }
+
+    .fa {
+    color: $light-blue;
+    }
+  }
+}

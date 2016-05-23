@@ -10,7 +10,7 @@ angular.module('myApp')
     var currId = $routeParams.id;
 
     // Get user by ID
-        crudService.getUserQuiz(currId)
+        crudService.getQuizById(currId)
         .success(function(results) {
             $scope.quizData = results.data;
             console.log("singleQuizController"+ JSON.stringify($scope.quizData));

@@ -78,7 +78,7 @@ var id = req.params.id;
 // get single quiz
 router.get('/singlequiz/:id', function(req, res, next) {
 var id = req.params.id;
- queries.showOneQuiz(id)  
+ queries.getQuizById(id)  
  .then(function(results) {
    res.status(200).json({
       data: results

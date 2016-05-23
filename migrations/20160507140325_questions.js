@@ -3,7 +3,6 @@ exports.up = function(knex, Promise) {
     table.increments('quest_id');
     table.integer('quiz_id').references('quiz_id').inTable('quizzes');
     table.string('question');
-    table.string('answer');
     table.string('a1');
     table.string('a2');
     table.string('a3');

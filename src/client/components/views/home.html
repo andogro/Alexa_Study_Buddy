@@ -8,7 +8,7 @@
     <section>  
       <br>
         <ul ng-repeat="quiz in quizData"> 
-           <li>{{quiz.quiz_name}}<br>
+           <li><a href="#/singlequiz/{{quiz.quiz_id}}">{{quiz.quiz_name}}</a><br>
               {{quiz.quiz_desc}}<br>
               {{quiz.quiz_id}}
            </li>

@@ -30,11 +30,11 @@ module.exports = {
             return results;
         });
     },
-    showOneQuiz: function(id){
-        return Quizzes().join('questions', 'quizzes.d_id', '=', 'questions.quiz_id')
-        .where('quizes.quiz_id',id)
+    getQuizById: function(id){
+        return Quizzes().join('questions', 'quizzes.quiz_id', '=', 'questions.quiz_id')
+        .where('quizzes.quiz_id',id)
         .then(function(results) {
-            console.log("one quiz results"+results)
+            console.log("one quiz results"+JSON.stringify(results));
             return results;
         });
     },

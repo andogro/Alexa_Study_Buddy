@@ -2,12 +2,19 @@
   <div class="medium-6 columns over">
     <section>  
         <br>
-        <h3>Single Quiz</h3>
+        <h3>{{quizData[0].quiz_name}}</h3>
+        <h5>Quiz number {{quizData[0].quiz_id}}</h5>
         <br>
-        {{quizData[0].quiz_name}}
-        {{quizData[0]}}
+        {{quizData[0].quiz_desc}}
         <img src ="{{quizData[0].q_img}}">
-<!-- ng repeat here to show several questions -->
+<!-- ng repeat here to show all questions -->
+        <ul ng-repeat="item in quizData">
+            <li>Q: {{item.question}}?</li>
+            <li>1) {{item.a1}}</li>
+            <li>2) {{item.a2}}</li>
+            <li>3) {{item.a3}}</li>
+            <li>4) {{item.a4}}</li>
+        </ul>
     </section>
   </div>
 </div>  

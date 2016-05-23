@@ -17,7 +17,10 @@
        },
       getUserQuiz: function(currId) {
         return $http.get('/singlequiz/'+currId)
-      }    
+      },
+      getAllQuizzes: function() {
+        return $http.get('/quizzes')
+      }      
     }
   }
 })();

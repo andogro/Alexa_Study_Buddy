@@ -14,6 +14,7 @@
     $routeProvider
     .when('/', {
       templateUrl: '../components/views/home.html',
+      controller: 'homeController'
       // restricted: false,
       // preventLoggedIn: true
     })
@@ -24,6 +25,12 @@
       // preventLoggedIn: false
     })
     .when('/quizzes/:id',{
+      templateUrl: '../components/quizzes/quizindex.html',
+      controller: 'quizzesController'
+      // restricted: false,
+      // preventLoggedIn: false
+    })
+    .when('/quizzes',{
       templateUrl: '../components/quizzes/quizindex.html',
       controller: 'quizzesController'
       // restricted: false,

@@ -8,7 +8,16 @@ var path = require('path');
 
 // get all
 router.get('/', function(req, res, next) {
-  res.sendFile('/index.html');
+queries.getAllQuizzes()
+  .then(function(results) {
+   res.status(200).json({
+      status: 'success',
+      data: results
+    });
+  })
+  .catch(function (err) {
+    return next(err);
+  });
 });
 
 // get all users
@@ -24,19 +33,19 @@ router.get('/users', function(req, res, next) {
   });
 });
 
-// // get all quizzes - may use this later
-// router.get('/quizzes', function(req, res, next) {
-//  queries.getAllQuizes()
-//   .then(function(results) {
-//    res.status(200).json({
-//       status: 'success',
-//       data: results
-//     });
-//   })
-//   .catch(function (err) {
-//     return next(err);
-//   });
-// });
+// get all quizzes - may use this later
+router.get('/quizzes', function(req, res, next) {
+ queries.getAllQuizzes()
+  .then(function(results) {
+   res.status(200).json({
+      status: 'success',
+      data: results
+    });
+  })
+  .catch(function (err) {
+    return next(err);
+  });
+});
 
 // // get all users
 // router.get('/cards', function(req, res, next) {

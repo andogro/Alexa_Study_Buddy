@@ -2,7 +2,16 @@
   <div class="medium-6 medium-centered large-4 large-centered columns">
     <br>
     <h3>A quiz module for anyone with Alexa</h3>
-    <h4>To get started, say "Alexa, launch study buddy". Then tell her the number
-    of the quiz you would like to try.</h4>
+    <h4>To get started, say "Alexa, launch study buddy". Then tell her the number of the quiz you would like to try for sure.</h4>
   </div>
+
+    <section>  
+      <br>
+        <ul ng-repeat="quiz in quizData"> 
+           <li>{{quiz.quiz_name}}<br>
+              {{quiz.quiz_desc}}<br>
+              {{quiz.quiz_id}}
+           </li>
+        </ul>
+  </section>
 </div>    

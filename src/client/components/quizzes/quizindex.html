@@ -3,7 +3,7 @@
     <section>  
         <br>
         <a href = "#/quiz/new">Create a new Quiz</a>
-          <ul ng-repeat="item in quizData | unique : 'quiz_name'">
+          <ul ng-repeat="item in quizData">
              <a href="#/singlequiz/{{item.quiz_id}}">
              <li>{{item.quiz_name}} </li>
              <li><img src ="{{item.q_img}}"></li>

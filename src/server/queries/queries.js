@@ -11,7 +11,7 @@ module.exports = {
         });
     },
     getAllQuizzes: function(){
-        return Quizzes().join('questions', 'quizzes.quiz_id', '=', 'questions.quiz_id')
+        return Quizzes()
         .then(function(results) {
             return results;
         });

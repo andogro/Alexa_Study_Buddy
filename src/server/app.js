@@ -8,11 +8,11 @@ var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 var swig = require('swig');
+require('dotenv').config();
 
 
 // *** routes *** //
 var routes = require('./routes/index.js');
-
 
 // *** express instance *** //
 var app = express();

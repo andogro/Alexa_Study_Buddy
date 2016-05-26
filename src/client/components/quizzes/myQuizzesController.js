@@ -3,7 +3,7 @@
   'use strict';
 
 angular.module('myApp')
-.controller('newQuizzesController', function($scope, $routeParams, crudService) {
+.controller('myQuizzesController', function($scope, $routeParams, crudService) {
 
    $scope.formData = {};
 

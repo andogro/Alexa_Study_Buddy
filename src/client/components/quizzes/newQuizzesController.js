@@ -8,14 +8,14 @@ angular.module('myApp')
     $scope.formData = {};
     $rootScope.user = {};
     $rootScope.loggedIn = true;
-    $rootScope.user.id = JSON.parse(authService.getUserID());
+    $scope.formData.user_id = JSON.parse(authService.getUserID());
 
     var memberId = authService.getUserID();
     var token = authService.getUserToken();
 
 
      $scope.submit = function() {     
-          console.log("this is what will be submitted" + $scope.formData);
+          console.log($scope.formData);
           crudService.addQuiz($scope.formData)
               .success(function(data) {
                   $scope.formData = {};

@@ -26,7 +26,7 @@ module.exports = {
         return Quizzes().join('questions', 'quizzes.quiz_id', '=', 'questions.quiz_id')
         .where('quizzes.user_id',id)
         .then(function(results) {
-            console.log("user quiz results"+results)
+            console.log("user quiz results"+ JSON.stringify(results));
             return results;
         });
     },

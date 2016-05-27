@@ -20,19 +20,10 @@
       getAllQuizzes: function() {
         return $http.get('/quizzes')
       },
-      getQuizByUser: function (user_id, token) {
-        return $http.get('/quizbyuser/' + user_id, {
-            headers: {
-              'x-access-token': token
-            }
-          })
-          .then(function(res){
-            return res;
-          })
-          .catch(function(err){
-            return err;
-          });
+      getUserQuizzes: function (userId) {
+        return $http.get('/quizzes/' + userId)
       },
     }
   }
+  
 })();

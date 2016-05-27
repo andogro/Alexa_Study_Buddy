@@ -70,6 +70,7 @@ router.get('/quizzes/:id', function(req, res, next) {
 var id = req.params.id;
  queries.getUserQuizzes(id)  
  .then(function(results) {
+   console.log("bring back the data");
    res.status(200).json({
       data: results
     });

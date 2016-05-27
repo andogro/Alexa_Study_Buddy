@@ -8,24 +8,22 @@ angular.module('myApp')
     $rootScope.user = {};
     $rootScope.loggedIn = true;
     $rootScope.user.name = JSON.parse(authService.getUserName());
-
-    var memberId = authService.getUserID();
-    var token = authService.getUserToken();
-
-   $scope.formData = {};
-     $scope.submit = function() {     
-          console.log($scope.formData);
-          crudService.addQuiz($scope.formData)
-              .success(function(data) {
-                  $scope.formData = {};
-                  console.log(data);
-              })
-              .error(function(error) {
-                  console.log('Error: ' + JSON.stringify(error));
-              });
-      };
+    var userId = authService.getUserID();
       
+    console.log(userId);
+    $scope.formData = {};
+    $scope.userData = {};
+
+     crudService.getUserQuizzes(userId)
+     .success(function(results) {
+            $scope.quizData = results.data;
+            console.log("quiz it out"+ JSON.stringify($scope.quizData));
+        })
+        .error(function(error) {
+            console.log('Error: ' + error);
+        });
     });
+      
 
 })();
 

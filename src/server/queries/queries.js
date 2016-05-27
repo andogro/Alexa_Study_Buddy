@@ -43,11 +43,25 @@ module.exports = {
         return Quizzes().insert({
             quiz_name: info.quizname,
             quiz_desc: info.quizdesc,
+            user_id: info.user_id
         })
         .then(function() {
-            return Quizzes()  
-        })
-      },  
+            return Quizzes()
+            .then(function(results) {
+            console.log("Quiz results"+JSON.stringify(results));
+            var lastQuiz = results.pop();
+            var quiz_id = lastQuiz.quiz_id;
+            return Questions().insert({
+              quiz_id: quiz_id,
+              question: info.question,
+              a1: info.a1,
+              a2: info.a2,
+              a3: info.a3,
+              a4: info.a4
+          })    
+         })
+       })   
+      },
 
     // !Routes to be added
     // addQuestion: function(deck_id,question,answer,q_img,a_img){

@@ -39,7 +39,7 @@
     .when('/quiz/new',{
       templateUrl: '../components/quizzes/addnewquiz.html',
       controller: 'newQuizzesController'
-      // restricted: false,
+      // restricted: true,
       // preventLoggedIn: false
     })
     .when('/singlequiz/:id',{

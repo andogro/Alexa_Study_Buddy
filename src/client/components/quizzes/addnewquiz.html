@@ -1,7 +1,9 @@
 
     <section>  
         <br>
-        Add a New Quiz
+        Add a New Quiz!
+        Hello {{user.id}}
+
         <form ng-submit="submit()">
                   <fieldset class="form-group">
                     <label for="name">Quiz Name</label>
@@ -10,10 +12,38 @@
                  
                  <fieldset class="form-group">
                    <label for="quiz_desc">Quiz Description</label>
-                   <textarea name="quiz_desc" class="form-control" id="description" ng-model="formData.quiz_description" rows="5" required></textarea>
+                   <textarea name="quiz_desc" class="form-control" id="description" ng-model="formData.quiz_desc" rows="5" required></textarea>
                  </fieldset>
 
+                 <p>You must add atleast 5 questions to start a new quiz. Always start with the correct answer, it will be randomized during study.</p>
                  
+
+                  <fieldset class="form-group">
+                    <label for="question">Question </label>
+                    <input name="question" type="text" class="form-control" id="question" ng-model="formData.question" placeholder="Question" required>
+                  </fieldset>
+
+
+                  <fieldset class="form-group">
+                    <label for="answer1">Answer 1</label>
+                    <input name="a1" <input type="text" class="form-control" id="a1" ng-model="formData.a1" placeholder ="answer 1" required >
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                     <label for="answer2">Answer 2</label>
+                     <input name="a2" <input type="text" class="form-control" id="a2" ng-model="formData.a2" placeholder ="answer 2" required >
+                   </fieldset>
+
+                   <fieldset class="form-group">
+                     <label for="answer3">Answer 3</label>
+                     <input name="a3" <input type="text" class="form-control" id="a3" ng-model="formData.a3" placeholder ="answer 3" required >
+                   </fieldset>
+
+                  <fieldset class="form-group">
+                     <label for="answer4">Answer 4</label>
+                     <input name="a4" <input type="text" class="form-control" id="a4" ng-model="formData.a4" placeholder ="answer 4" required >
+                   </fieldset>
+
 
                   <button type="submit" class="btn btn-primary">Create!</button>
               </form>

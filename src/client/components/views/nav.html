@@ -4,6 +4,9 @@
       <a class="navbar-brand" href="#/">Study Buddy</a>
     </div>
       <ul class="nav navbar-nav navbar-right">
+        <li ng-show="loggedIn"><a href="/#/profile">Welcome {{user.username + "!"}}</a></li>
+        <li ng-show="loggedIn" ng-click="loggedIn=false"><a href="/#/logout" class="pull-right">Logout</a></li>
+        <li>new item</li>
         <li><a href="#/users">Users</a></li>
         <li><a href="#/login">Login</a></li>
         <li><a href="#/quiz/new">Create A Quiz</a></li>

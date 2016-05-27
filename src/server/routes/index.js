@@ -104,6 +104,13 @@ router.post('/quiz/new', function(req, res, next) {
  var info = {};
  info.quizname = req.body.quiz_name;
  info.quizdesc = req.body.quiz_desc;
+ info.question = req.body.question;
+ info.user_id = req.body.user_id;
+ info.a1 = req.body.a1;
+ info.a2 = req.body.a2;
+ info.a3 = req.body.a3;
+ info.a4 = req.body.a4;
+
  queries.addQuiz(info)
  .then(function(fullresults) {
       console.log("full results"+fullresults)
@@ -112,6 +119,7 @@ router.post('/quiz/new', function(req, res, next) {
     });
    })
   });
+
 
 // Login & Authentication
 // login route
@@ -139,7 +147,7 @@ router.post('/login', function(req, res, next) {
           success: true,
           message: 'This is a token',
           token: token,
-          username: user.fname,
+          user: user.fname,
           user_id: user.u_id
 
         });
@@ -182,7 +190,7 @@ router.post('/register', function(req, res, next) {
       .then(function(data) {
         console.log("returned data from registration route", data);
         var user = {
-          name: name,
+          fname: fname,
           email: email,
           password: hashedPassword,
           user_id: data[0].id

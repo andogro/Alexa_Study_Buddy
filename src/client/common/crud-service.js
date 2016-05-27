@@ -11,12 +11,8 @@
       getQuizById: function(currId) {
         return $http.get('singlequiz/'+currId)
         },
-      addQuiz: function(data,token) {
-        return $http.post('/quiz/new', data, {
-            headers: {
-              'x-access-token': token
-            }
-          });
+      addQuiz: function(data) {
+        return $http.post('/quiz/new', data)
        },
       getUserQuiz: function(currId) {
         return $http.get('/singlequiz/'+currId)

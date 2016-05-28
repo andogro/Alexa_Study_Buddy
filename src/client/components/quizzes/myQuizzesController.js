@@ -24,9 +24,10 @@ angular.module('myApp')
 
     $rootScope.user = {};
     $rootScope.loggedIn = true;
+    console.log(JSON.parse(authService.getUserName())); 
     $rootScope.user.name = JSON.parse(authService.getUserName());
     var userId = authService.getUserID();
-      
+ 
     console.log(userId);
     $scope.formData = {};
     $scope.userData = {};

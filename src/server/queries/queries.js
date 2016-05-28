@@ -63,10 +63,6 @@ module.exports = {
        })   
       },
 
-      // Returns [2] in "mysql", "sqlite"; [2, 3] in "postgresql"
-// knex('books')
-//   .returning('id')
-//   .insert([{title: 'Great Gatsby'}, {title: 'Fahrenheit 451'}])
 
     // !Routes to be added
     // addQuestion: function(deck_id,question,answer,q_img,a_img){

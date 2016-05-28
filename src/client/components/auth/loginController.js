@@ -14,7 +14,7 @@
         .then(function(user) {
           console.log("this is user info to set in auth" + user);
           authService.setUserInfo(user);
-          //Then redirect user to quizzes after succesful login
+          //redirect user to quizzes on login
           $location.path('/myquizzes');
           $rootScope.currentUser = {
             name: authService.getUserName(),
@@ -22,7 +22,6 @@
           };
         })
         .catch(function(err) {
-          // check status code - send error if error
           console.log(err);
         });
     };

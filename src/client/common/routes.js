@@ -79,7 +79,7 @@
         test: function(authService, $rootScope, $location) {
           authService.logout();
           $rootScope.currentUser = authService.getUserName();
-          $location.path('/login');
+          $location.path('/');
         }
       }
     })

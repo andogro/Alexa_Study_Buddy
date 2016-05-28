@@ -10,12 +10,7 @@ angular.module('myApp')
     $scope.questionData = {};
     $rootScope.loggedIn = true;
     $scope.formData.user_id = JSON.parse(authService.getUserID());
-
-    var memberId = authService.getUserID();
-    var token = authService.getUserToken();
-
     $scope.CQ = 0;
-
     $scope.quiz = {};
     $scope.questions = [];
 
@@ -36,7 +31,6 @@ angular.module('myApp')
  };
     
   $scope.removeQuestion = function(index) {
-    console.log("this is index"+index)
     $scope.questions.splice(index,1);
   };
 

@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.timestamp('last_update').defaultTo(knex.fn.now());
     table.string('quiz_name');
     table.text('quiz_desc');
+    table.string('quiz_tags');
   });
 };
 

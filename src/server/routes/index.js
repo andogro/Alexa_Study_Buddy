@@ -102,19 +102,22 @@ router.get('/quiz/new', function(req, res, next) {
 
 //  Post to create a new quiz
 router.post('/quiz/new', function(req, res, next) {
- var info = {};
- info.quizname = req.body.quiz_name;
- info.quizdesc = req.body.quiz_desc;
- info.question = req.body.question;
- info.user_id = req.body.user_id;
- info.a1 = req.body.a1;
- info.a2 = req.body.a2;
- info.a3 = req.body.a3;
- info.a4 = req.body.a4;
+ var quiz = {};
+ console.log("this is req.body"+ JSON.stringify(req.body));
+ quiz.quizname = req.body.quiz.quiz_name;
+ quiz.quizdesc = req.body.quiz.quiz_desc;
+ quiz.user_id = req.body.quiz.user_id;
 
- queries.addQuiz(info)
+
+ var questions = req.body.questions;
+ var a1 = req.body.questions.a1;
+ var a2= req.body.questions.a2;
+ var a3 = req.body.questions.a3;
+ var a4 = req.body.questions.a4;
+
+ queries.addQuiz(quiz,questions)
  .then(function(fullresults) {
-      console.log("full results"+fullresults)
+      console.log("full results"+JSON.stringify(fullresults));
       res.status(200).json({
       data: fullresults
     });

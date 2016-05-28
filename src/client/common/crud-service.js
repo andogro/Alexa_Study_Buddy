@@ -11,8 +11,11 @@
       getQuizById: function(currId) {
         return $http.get('singlequiz/'+currId)
         },
-      addQuiz: function(data) {
-        return $http.post('/quiz/new', data)
+      addQuiz: function(quiz,questions) {
+        return $http.post('/quiz/new', {
+            quiz: quiz,
+            questions: questions
+          })
        },
       getUserQuiz: function(currId) {
         return $http.get('/singlequiz/'+currId)
@@ -25,5 +28,5 @@
       },
     }
   }
-  
+
 })();

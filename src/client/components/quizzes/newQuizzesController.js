@@ -3,23 +3,54 @@
   'use strict';
 
 angular.module('myApp')
-.controller('newQuizzesController', function($scope, $rootScope, $routeParams, crudService, authService) {
+.controller('newQuizzesController', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
 
     $scope.formData = {};
     $rootScope.user = {};
+    $scope.questionData = {};
     $rootScope.loggedIn = true;
     $scope.formData.user_id = JSON.parse(authService.getUserID());
 
     var memberId = authService.getUserID();
     var token = authService.getUserToken();
 
+    $scope.CQ = 0;
 
-     $scope.submit = function() {     
-          console.log($scope.formData);
-          crudService.addQuiz($scope.formData)
+    $scope.quiz = {};
+    $scope.questions = [];
+
+    function Question (question, a1, a2, a3, a4) {
+      this.question = question;
+      this.a1 = a1;
+      this.a2 = a2;
+      this.a3 = a3;
+      this.a4 = a4
+    }
+
+  $scope.addNewQuestion = function() {
+   var newItemNo = $scope.questions.length+1;
+   var newQuestion = new Question($scope.questionData.question, $scope.questionData.a1, $scope.questionData.a2, $scope.questionData.a3, $scope.questionData.a4); 
+   console.log(JSON.stringify(newQuestion));
+   $scope.questions.push(newQuestion);
+   $scope.questionData = {};
+   $scope.CQ++;
+ };
+    
+  $scope.removeLastQuestion = function() {
+    var lastItem = $scope.questions.length-1;
+    $scope.questions.splice(lastItem);
+  };
+
+
+  $scope.submit = function() {     
+    var newItemNo = $scope.questions.length+1;
+    var newQuestion = new Question($scope.questionData.question, $scope.questionData.a1, $scope.questionData.a2, $scope.questionData.a3, $scope.questionData.a4); 
+       $scope.questions.push(newQuestion);
+          crudService.addQuiz($scope.formData, $scope.questions)
               .success(function(data) {
                   $scope.formData = {};
-                  console.log(data);
+                  $scope.questiondata = {};
+                  $location.path('/myquizzes');
               })
               .error(function(error) {
                   console.log('Error: ' + JSON.stringify(error));

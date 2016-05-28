@@ -38,30 +38,35 @@ module.exports = {
             return results;
         });
     },
-    addQuiz: function(info){
-        console.log("this is first query"+info)
+    addQuiz: function(quiz, questions){
+        console.log("this is quiz query"+ JSON.stringify(quiz))
+        console.log("this is questions query"+ JSON.stringify(questions))
         return Quizzes().insert({
-            quiz_name: info.quizname,
-            quiz_desc: info.quizdesc,
-            user_id: info.user_id
+            quiz_name: quiz.quizname,
+            quiz_desc: quiz.quizdesc,
+            user_id: quiz.user_id
         })
         .then(function() {
             return Quizzes()
             .then(function(results) {
-            console.log("Quiz results"+JSON.stringify(results));
             var lastQuiz = results.pop();
             var quiz_id = lastQuiz.quiz_id;
-            return Questions().insert({
-              quiz_id: quiz_id,
-              question: info.question,
-              a1: info.a1,
-              a2: info.a2,
-              a3: info.a3,
-              a4: info.a4
-          })    
+            questions.forEach(function(element){
+            element.quiz_id = quiz_id;
+            });
+            console.log("this is questions before insert"+JSON.stringify(questions));
+            return Questions()
+            .insert(
+             questions
+          )    
          })
        })   
       },
+
+      // Returns [2] in "mysql", "sqlite"; [2, 3] in "postgresql"
+// knex('books')
+//   .returning('id')
+//   .insert([{title: 'Great Gatsby'}, {title: 'Fahrenheit 451'}])
 
     // !Routes to be added
     // addQuestion: function(deck_id,question,answer,q_img,a_img){

@@ -53,7 +53,6 @@
 
                       <button type="submit" class="btn btn-primary" >Create Your Quiz</button>
 
-                     <button class="remove" type="button" ng-show="$last" ng-click="removeChoice()">remove last question</button>
 
                   <div ng-repeat="question in questions">
                          <h4>Question {{$index + 1}}</h4>
@@ -83,8 +82,8 @@
                             <input name="a4" <input type="text" class="form-control" id="a4" ng-model="question.a4" placeholder ="answer 4" required >
                           </fieldset>
 
-                            <button class="remove" type="button" ng-show="$last" ng-click="removeChoice()"> delete this question</button>
-                         </div>
+                            <button class="remove" type="button" ng-click="removeQuestion($index)"> delete this question</button>
+                     </div>
 
    <div>
       {{ questions }}

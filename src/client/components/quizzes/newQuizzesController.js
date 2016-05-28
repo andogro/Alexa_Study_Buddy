@@ -28,17 +28,16 @@ angular.module('myApp')
     }
 
   $scope.addNewQuestion = function() {
-   var newItemNo = $scope.questions.length+1;
+   // var newItemNo = $scope.questions.length+1;
    var newQuestion = new Question($scope.questionData.question, $scope.questionData.a1, $scope.questionData.a2, $scope.questionData.a3, $scope.questionData.a4); 
-   console.log(JSON.stringify(newQuestion));
    $scope.questions.push(newQuestion);
    $scope.questionData = {};
    $scope.CQ++;
  };
     
-  $scope.removeLastQuestion = function() {
-    var lastItem = $scope.questions.length-1;
-    $scope.questions.splice(lastItem);
+  $scope.removeQuestion = function(index) {
+    console.log("this is index"+index)
+    $scope.questions.splice(index,1);
   };
 
 

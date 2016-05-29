@@ -26,6 +26,21 @@
       getUserQuizzes: function (userId) {
         return $http.get('/quizzes/' + userId)
       },
+      getEditQuiz: function (quizId) {
+        return $http.get('/quiz/edit/' + quizId)
+      },
+      editQuiz: function (quiz,questions, id) {
+        return $http.post('/quiz/edit/' + id, {
+          quiz: quiz,
+          questions: questions
+        })
+      },
+      deleteQuiz: function (id) {
+        return $http.post('/quiz/delete/' + id)
+      },
+      deleteQuestion: function (id) {
+        return $http.post('/question/delete/' + id)
+      },
     }
   }
 

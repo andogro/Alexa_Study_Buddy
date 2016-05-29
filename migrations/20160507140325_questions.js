@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
    return knex.schema.createTable('questions', function(table){
     table.increments('quest_id');
-    table.integer('quiz_id').references('quiz_id').inTable('quizzes');
+    table.integer('quiz_id').references('quiz_id').inTable('quizzes').onDelete('CASCADE');
     table.string('question');
     table.string('a1');
     table.string('a2');

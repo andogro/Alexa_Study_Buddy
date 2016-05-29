@@ -12,7 +12,6 @@
     $scope.login = function() {
       authService.login($scope.user)
         .then(function(user) {
-          console.log("this is user info to set in auth" + user);
           authService.setUserInfo(user);
           //redirect user to quizzes on login
           $location.path('/myquizzes');

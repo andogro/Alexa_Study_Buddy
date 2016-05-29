@@ -36,11 +36,11 @@
       // restricted: false,
       // preventLoggedIn: false
     })
-    .when('/quiz/new',{
+    .when('/quiz/new', {
       templateUrl: '../components/quizzes/addnewquiz.html',
-      controller: 'newQuizzesController'
-      // restricted: true,
-      // preventLoggedIn: false
+      controller: 'newQuizzesController',
+      restricted: true,
+      preventLoggedIn: false
     })
     .when('/singlequiz/:id',{
       templateUrl: '../components/quizzes/singlequiz.html',
@@ -66,9 +66,9 @@
       restricted: true,
       preventLoggedIn: false
     })
-    .when('/edit', {
-      templateUrl: '../components/quizzes/edit.html',
-      controller: 'editQuizzesController',
+    .when('/quiz/edit/:id', {
+      templateUrl: '../components/quizzes/editquiz.html',
+      controller: 'editQuizController',
       restricted: true,
       preventLoggedIn: false
     })

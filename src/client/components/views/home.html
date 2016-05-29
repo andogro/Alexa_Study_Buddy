@@ -3,15 +3,17 @@
     <br>
     <h3>A quiz module for anyone with Alexa</h3>
     <h4>To get started, say "Alexa, launch study buddy". Then tell her the number of the quiz you would like to try for sure.</h4>
+    <input type="text" class ="u-full-width" id="search" placeholder="Search" ng-model="search">
   </div>
+</div>   
 
-    <section>  
-      <br>
-        <ul ng-repeat="quiz in quizData"> 
-           <li><a href="#/singlequiz/{{quiz.quiz_id}}">{{quiz.quiz_name}}</a><br>
-              {{quiz.quiz_desc}}<br>
-              {{quiz.quiz_id}}
-           </li>
-        </ul>
-  </section>
-</div>    
+<div class="grid-items">
+  <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item" ng-repeat="quiz in quizData | filter:search">
+    <h1>{{quiz.quiz_id}}</h1>
+    <h1>{{quiz.quiz_name}}</h1>
+    <p> {{quiz.quiz_desc}}<br>
+        by:  {{quiz.fname}}<br>
+        added: {{quiz.created | date}}</p>
+  </a>
+</div>
+

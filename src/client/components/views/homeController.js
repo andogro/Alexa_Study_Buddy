@@ -11,7 +11,7 @@ angular.module('myApp')
     $http.get('/quizzes')
         .success(function(results) {
             $scope.quizData = results.data;
-            console.log("user side this is the quizdata"+ $scope.quizData);
+            console.log("user side this is the quizdata"+ JSON.stringify($scope.quizData));
         })
         .error(function(error) {
             console.log('Error: ' + JSON.stringify(error));

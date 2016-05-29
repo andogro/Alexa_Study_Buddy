@@ -1,0 +1,97 @@
+
+    <section>  
+        <br>
+       
+        Change any of the fields below, then select update to update your quiz.
+
+        <form ng-submit="submit()">
+
+                  <button type="submit" class="btn btn-primary" >Update Your Quiz</button>
+
+                  <button class="remove" type="button" ng-click="deleteQuiz(formData.quiz_id)"> Delete this Quiz</button>
+
+                  <fieldset class="form-group">
+                    <label for="quiz_name">Quiz Name</label>
+                    <input name="quiz_name" type="text" class="form-control" id="quiz_name" ng-model="formData.quiz_name" required >
+                  </fieldset>
+                 
+                 <fieldset class="form-group">
+                   <label for="quiz_desc">Quiz Description</label>
+                   <textarea name="quiz_desc" class="form-control" id="description" ng-model="formData.quiz_desc" rows="5" required></textarea>
+                 </fieldset>
+
+                  <fieldset class="form-group">
+                    <label for="quiz_tags">Quiz Tags</label>
+                    <input name="quiz_tags" type="text" class="form-control" id="quiz_tags" ng-model="formData.quiz_tags" required >
+                  </fieldset>
+
+                  Update Current Questions
+
+                  <div ng-repeat="question in questions">
+                         <h4>Question {{$index + 1}}</h4>
+                         <fieldset class="form-group">
+                           <label for="question">Question </label>
+                           <input name="question" type="text" class="form-control" id="question" ng-model="question.question" placeholder="Question" required>
+                         </fieldset>
+
+
+                         <fieldset class="form-group">
+                           <label for="answer1">Answer 1</label>
+                           <input name="a1" <input type="text" class="form-control" id="a1" ng-model="question.a1" placeholder ="answer 1" required >
+                         </fieldset>
+
+                         <fieldset class="form-group">
+                            <label for="answer2">Answer 2</label>
+                            <input name="a2" <input type="text" class="form-control" id="a2" ng-model="question.a2" placeholder ="answer 2" required >
+                          </fieldset>
+
+                          <fieldset class="form-group">
+                            <label for="answer3">Answer 3</label>
+                            <input name="a3" <input type="text" class="form-control" id="a3" ng-model="question.a3" placeholder ="answer 3" required >
+                          </fieldset>
+
+                         <fieldset class="form-group">
+                            <label for="answer4">Answer 4</label>
+                            <input name="a4" <input type="text" class="form-control" id="a4" ng-model="question.a4" placeholder ="answer 4" required >
+                          </fieldset>
+
+                            <button class="remove" type="button" ng-click="removeQuestion(question.quest_id, $index)"> delete this question</button>
+                     </div>
+
+                 Add a new question
+
+                  <fieldset class="form-group">
+                    <label for="question">Question </label>
+                    <input name="question" type="text" class="form-control" id="question" ng-model="questionData.question" placeholder="Question" required>
+                  </fieldset>
+
+
+                  <fieldset class="form-group">
+                    <label for="answer1">Answer 1</label>
+                    <input name="a1" <input type="text" class="form-control" id="a1" ng-model="questionData.a1" placeholder ="answer 1" required >
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                     <label for="answer2">Answer 2</label>
+                     <input name="a2" <input type="text" class="form-control" id="a2" ng-model="questionData.a2" placeholder ="answer 2" required >
+                   </fieldset>
+
+                   <fieldset class="form-group">
+                     <label for="answer3">Answer 3</label>
+                     <input name="a3" <input type="text" class="form-control" id="a3" ng-model="questionData.a3" placeholder ="answer 3" required >
+                   </fieldset>
+
+                  <fieldset class="form-group">
+                     <label for="answer4">Answer 4</label>
+                     <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="answer 4" required >
+                   </fieldset>
+
+                  <button class="addquestion" type="button" ng-click="addNewQuestion()"> Add this Question</button>
+
+                     <div>
+                        {{ questions }}
+                     </div>
+
+              </form>
+
+          </section>    

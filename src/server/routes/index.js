@@ -51,20 +51,6 @@ router.get('/quizzes', function(req, res, next) {
   });
 });
 
-// // get all users
-// router.get('/cards', function(req, res, next) {
-//  queries.getAllCards()  
-//  .then(function(results) {
-//    res.status(200).json({
-//       status: 'success',
-//       data: results
-//     });
-//   })
-//   .catch(function (err) {
-//     return next(err);
-//   });
-// });
-
 // get quizzes for an individual user
 router.get('/quizzes/:id', function(req, res, next) {
 var id = req.params.id;
@@ -100,7 +86,7 @@ router.get('/quiz/new', function(req, res, next) {
   res.status(200);
 });
 
-//  Post to create a new quiz
+//  Create a new quiz
 router.post('/quiz/new', function(req, res, next) {
  var quiz = {};
  console.log("this is req.body"+ JSON.stringify(req.body));
@@ -108,12 +94,11 @@ router.post('/quiz/new', function(req, res, next) {
  quiz.quizdesc = req.body.quiz.quiz_desc;
  quiz.user_id = req.body.quiz.user_id;
 
-
  var questions = req.body.questions;
- var a1 = req.body.questions.a1;
- var a2= req.body.questions.a2;
- var a3 = req.body.questions.a3;
- var a4 = req.body.questions.a4;
+ // var a1 = req.body.questions.a1;
+ // var a2= req.body.questions.a2;
+ // var a3 = req.body.questions.a3;
+ // var a4 = req.body.questions.a4;
 
  queries.addQuiz(quiz,questions)
  .then(function(fullresults) {
@@ -124,6 +109,65 @@ router.post('/quiz/new', function(req, res, next) {
    })
   });
 
+// get quiz to edit
+router.get('/quiz/edit/:id', function(req, res, next) {
+var id = req.params.id;
+ queries.getQuizById(id)  
+ .then(function(results) {
+   res.status(200).json({
+      data: results
+    });
+  })
+  .catch(function (err) {
+    return next(err);
+  });
+});
+
+
+//  Edit and quiz and questions
+router.post('/quiz/edit/:id', function(req, res, next) {
+ var quizid = req.params.id;
+ var quiz = {};
+ console.log("this is req.body"+ JSON.stringify(req.body));
+ quiz.quizname = req.body.quiz.quiz_name;
+ quiz.quizdesc = req.body.quiz.quiz_desc;
+ quiz.user_id = req.body.quiz.user_id;
+
+ var questions = req.body.questions;
+
+ queries.addQuiz(quiz,questions)
+ .then(function(fullresults) {
+      console.log("full results"+JSON.stringify(fullresults));
+      res.status(200).json({
+      data: fullresults
+    });
+   })
+  });
+
+router.post('/question/delete/:id', function(req,res,next) {
+  var id = req.params.id;
+  queries.deleteQuestion(id).then(function(results) {
+   res.status(200).json({
+      data: results
+    });
+  })
+  .catch(function (err) {
+    return next(err);
+  });
+});
+
+
+router.post('/quiz/delete/:id', function(req,res,next) {
+  var id = req.params.id;
+  queries.deleteQuiz(id).then(function(results) {
+   res.status(200).json({
+      data: results
+    });
+  })
+  .catch(function (err) {
+    return next(err);
+  });
+});
 
 // Login & Authentication
 // login route

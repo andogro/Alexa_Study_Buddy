@@ -11,7 +11,7 @@ module.exports = {
         });
     },
     getAllQuizzes: function(){
-        return Quizzes()
+        return Quizzes().join('users', 'quizzes.user_id', '=', 'users.u_id')
         .then(function(results) {
             return results;
         });
@@ -61,7 +61,30 @@ module.exports = {
           )    
          })
        })   
-      },
+      },  
+    editQuiz: function(quiz, questions, id) {
+        return Quizzes().where('quiz_id',id)
+        .update(
+            quiz
+        )
+        .then(function() {
+        return Questions().where('quiz_id',id)
+        .update(
+             questions
+          )
+        }); 
+    },
+    deleteQuestion: function(id) {
+        return Questions().where('quest_id',id).del().then(function(results) {
+            return results;
+        })
+    },
+    deleteQuiz: function(id) {
+      return Quizzes().where('quiz_id', id).del().then(function(results) {
+          return results;
+        });
+     }
+
 
 
     // !Routes to be added

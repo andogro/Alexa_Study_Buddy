@@ -83,7 +83,6 @@
         }
       }
     })
-
     .otherwise({redirectTo: '/login'});
     $httpProvider.interceptors.push('authInterceptor');
   }

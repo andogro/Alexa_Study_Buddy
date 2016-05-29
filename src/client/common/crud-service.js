@@ -29,7 +29,7 @@
       getEditQuiz: function (quizId) {
         return $http.get('/quiz/edit/' + quizId)
       },
-      editQuiz: function (quiz,questions, id) {
+      editQuiz: function (quiz,questions,id) {
         return $http.post('/quiz/edit/' + id, {
           quiz: quiz,
           questions: questions

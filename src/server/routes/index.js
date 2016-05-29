@@ -129,13 +129,13 @@ router.post('/quiz/edit/:id', function(req, res, next) {
  var quizid = req.params.id;
  var quiz = {};
  console.log("this is req.body"+ JSON.stringify(req.body));
- quiz.quizname = req.body.quiz.quiz_name;
- quiz.quizdesc = req.body.quiz.quiz_desc;
+ quiz.quiz_name = req.body.quiz.quiz_name;
+ quiz.quiz_desc = req.body.quiz.quiz_desc;
  quiz.user_id = req.body.quiz.user_id;
 
  var questions = req.body.questions;
 
- queries.addQuiz(quiz,questions)
+ queries.editQuiz(quiz,questions)
  .then(function(fullresults) {
       console.log("full results"+JSON.stringify(fullresults));
       res.status(200).json({

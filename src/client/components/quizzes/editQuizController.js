@@ -66,12 +66,8 @@ angular.module('myApp')
           });
   };
 
-
   $scope.submit = function() {     
-    var newItemNo = $scope.questions.length+1;
-    var newQuestion = new Question($scope.questionData.question, $scope.questionData.a1, $scope.questionData.a2, $scope.questionData.a3, $scope.questionData.a4); 
-       $scope.questions.push(newQuestion);
-          crudService.addQuiz($scope.formData, $scope.questions)
+          crudService.editQuiz($scope.formData, $scope.questions)
               .success(function(data) {
                   $scope.formData = {};
                   $scope.questiondata = {};

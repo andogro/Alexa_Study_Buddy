@@ -103,6 +103,26 @@ router.post('/quiz/new', function(req, res, next) {
    })
   });
 
+
+//  Create a new quiz
+router.post('/question/new', function(req, res, next) {
+ var question = {};
+ question.quiz_id = req.body.question.quiz_id;
+ question.question = req.body.question.question;
+ question.a1= req.body.question.a1;
+ question.a2= req.body.question.a2;
+ question.a3= req.body.question.a3;
+ question.a4= req.body.question.a4;
+
+ queries.addQuestion(question)
+ .then(function(fullresults) {
+      console.log("full results"+fullresults);
+      res.status(200).json({
+      data: fullresults
+    });
+   })
+  });
+
 // get quiz to edit
 router.get('/quiz/edit/:id', function(req, res, next) {
 var id = req.params.id;

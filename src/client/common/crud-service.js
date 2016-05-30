@@ -17,6 +17,11 @@
             questions: questions
           })
        },
+       addQuestion: function(question) {
+         return $http.post('/question/new', {
+             question: question
+           })
+        },
       getUserQuiz: function(currId) {
         return $http.get('/singlequiz/'+currId)
       },

@@ -66,8 +66,8 @@
                      </div>
 
                  Add a new question
-
-<!--                   <fieldset class="form-group">
+            <form ng-submit="addQ()">
+              <fieldset class="form-group">
                     <label for="question">Question </label>
                     <input name="question" type="text" class="form-control" id="question" ng-model="questionData.question" placeholder="Question" required>
                   </fieldset>
@@ -93,7 +93,7 @@
                      <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="answer 4" required >
                    </fieldset>
 
-                  <button class="addquestion" type="button" ng-click="addNewQuestion()"> Add this Question</button> -->
+                  <button class="addquestion" type="submit"> Add this Question</button>
 
                      <div>
                         {{ questions }}

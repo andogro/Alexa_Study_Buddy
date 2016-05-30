@@ -5,13 +5,14 @@
 angular.module('myApp')
 .controller('editQuizController', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
 
+    $rootScope.loggedIn = true;
     $scope.quizchanged = false;
     var quizId = $routeParams.id;
     $scope.formData = {};
     $scope.questions = [];
 
-    function Question (quest_id, question, a1, a2, a3, a4) {
-      this.quest_id = quest_id;
+    function Question (id, question, a1, a2, a3, a4) {
+      this.quiz_id = id;
       this.question = question;
       this.a1 = a1;
       this.a2 = a2;
@@ -28,7 +29,7 @@ angular.module('myApp')
            $scope.formData.quiz_id = results.data[0].quiz_id;          
           
           for (var i=0; i<results.data.length; i++) {
-          var newQuestion = new Question(results.data[i].quest_id, results.data[i].question, results.data[i].a1, results.data[i].a2, results.data[i].a3, results.data[i].a4); 
+          var newQuestion = new Question(results.data[i].quiz_id, results.data[i].question, results.data[i].a1, results.data[i].a2, results.data[i].a3, results.data[i].a4); 
           $scope.questions.push(newQuestion);
           newQuestion = "";
           }
@@ -41,11 +42,17 @@ angular.module('myApp')
 
   //add new question will need to hit an insert route     
 
-    $scope.addNewQuestion = function() {
-     var newQuestion = new Question($scope.questionData.question, $scope.questionData.a1, $scope.questionData.a2, $scope.questionData.a3, $scope.questionData.a4); 
-     $scope.questions.push(newQuestion);
-     $scope.questionData = {};
-     $scope.CQ++;
+    $scope.addQ = function() {
+     var newQuestion = new Question(quizId, $scope.questionData.question, $scope.questionData.a1, $scope.questionData.a2, $scope.questionData.a3, $scope.questionData.a4); 
+     crudService.addQuestion(newQuestion)
+         .success(function(data) {
+           $scope.questionadded = true;
+           $scope.questions.push(newQuestion)
+          })
+         .error(function(error) {
+             console.log('Error: ' + JSON.stringify(error));
+         });       
+          $scope.questionData = {};
    };
 
   //remove question 

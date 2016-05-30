@@ -74,6 +74,20 @@ module.exports = {
             return results;
         }); 
     },
+    addQuestion: function(question) {
+        return Questions().returning(['quiz_id', 'question', 'a1', 'a2', 'a3', 'a4']).insert({
+            quiz_id: question.quiz_id,
+            question: question.question,
+            a1: question.a1,
+            a2: question.a2,
+            a3: question.a3,
+            a4: question.a4,
+        })
+        .then(function(results) {
+            console.log("adding an additional question"+ JSON.stringify(results));
+            return results;
+        }); 
+    },
     editQuestion: function(question, id) {
         return Questions().where('quest_id',id).update({
             question: question.question,

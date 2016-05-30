@@ -62,16 +62,29 @@ module.exports = {
          })
        })   
       },  
-    editQuiz: function(quiz, questions, id) {
-        return Quizzes().where('quiz_id',id)
-        .update(
-            quiz
-        )
-        .then(function() {
-        return Questions().where('quiz_id',id)
-        .update(
-             questions
-          )
+    editQuiz: function(quiz, id) {
+        return Quizzes().where('quiz_id',id).update({
+            quiz_name: quiz.quiz_name,
+            quiz_desc: quiz.quiz_desc,
+            quiz_tags: quiz.quiz_tags,
+            last_update: knex.fn.now()
+        })
+        .then(function(results) {
+            console.log("update quiz results"+ JSON.stringify(results));
+            return results;
+        }); 
+    },
+    editQuestion: function(question, id) {
+        return Questions().where('quest_id',id).update({
+            question: question.question,
+            a1: question.a1,
+            a2: question.a2,
+            a3: question.a3,
+            a4: question.a4,
+        })
+        .then(function(results) {
+            console.log("update question results"+ JSON.stringify(results));
+            return results;
         }); 
     },
     deleteQuestion: function(id) {

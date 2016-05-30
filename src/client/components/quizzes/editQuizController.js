@@ -5,6 +5,7 @@
 angular.module('myApp')
 .controller('editQuizController', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
 
+    $scope.quizchanged = false;
     var quizId = $routeParams.id;
     $scope.formData = {};
     $scope.questions = [];
@@ -18,21 +19,20 @@ angular.module('myApp')
       this.a4 = a4
     }
 
-
+// get information to populate the page
     crudService.getEditQuiz(quizId)
     .success(function(results) {
            $scope.formData.quiz_name = results.data[0].quiz_name;
            $scope.formData.quiz_desc = results.data[0].quiz_desc;
            $scope.formData.quiz_tags = results.data[0].quiz_tags;
-           $scope.formData.quiz_id = results.data[0].quiz_id;
+           $scope.formData.quiz_id = results.data[0].quiz_id;          
           
           for (var i=0; i<results.data.length; i++) {
           var newQuestion = new Question(results.data[i].quest_id, results.data[i].question, results.data[i].a1, results.data[i].a2, results.data[i].a3, results.data[i].a4); 
           $scope.questions.push(newQuestion);
           newQuestion = "";
           }
-
-           console.log("Quiz and Questions on front end route"+ JSON.stringify($scope.quizData));
+           console.log("Quiz and Questions on front end route"+ JSON.stringify($scope.formData));
            console.log("this is scope.questions"+$scope.questions);
        })
        .error(function(error) {
@@ -66,18 +66,31 @@ angular.module('myApp')
           });
   };
 
-  $scope.submit = function() {     
-          crudService.editQuiz($scope.formData, $scope.questions)
+
+//edit question info
+  $scope.submitQ = function(question, id) {     
+          console.log("this is this question", question)
+          console.log("thi is the id", id);
+          crudService.editQuestion(question, id)
               .success(function(data) {
-                  $scope.formData = {};
-                  $scope.questiondata = {};
-                  $location.path('/myquizzes');
+                $scope.questionchanged = true;
               })
               .error(function(error) {
                   console.log('Error: ' + JSON.stringify(error));
               });
       };
-      
+
+
+//edit quiz info
+  $scope.submit = function() {     
+          crudService.editQuiz($scope.formData, quizId)
+              .success(function(data) {
+                $scope.quizchanged = true;
+              })
+              .error(function(error) {
+                  console.log('Error: ' + JSON.stringify(error));
+              });
+      };
     });
 
 })();

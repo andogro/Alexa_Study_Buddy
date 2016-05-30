@@ -6,7 +6,7 @@
 
         <form ng-submit="submit()">
 
-                  <button type="submit" class="btn btn-primary" >Update Your Quiz</button>
+                  <button type="submit" class="btn btn-primary" >Update Quiz Info</button>
 
                   <button class="remove" type="button" ng-click="deleteQuiz(formData.quiz_id)"> Delete this Quiz</button>
 
@@ -24,10 +24,12 @@
                     <label for="quiz_tags">Quiz Tags</label>
                     <input name="quiz_tags" type="text" class="form-control" id="quiz_tags" ng-model="formData.quiz_tags" required >
                   </fieldset>
+          </form>
 
                   Update Current Questions
 
                   <div ng-repeat="question in questions">
+                      <form ng-submit="submitQ(question, question.quest_id)">
                          <h4>Question {{$index + 1}}</h4>
                          <fieldset class="form-group">
                            <label for="question">Question </label>
@@ -56,6 +58,11 @@
                           </fieldset>
 
                             <button class="remove" type="button" ng-click="removeQuestion(question.quest_id, $index)"> delete this question</button>
+                            
+                            <button type="submit" class="btn btn-primary" >Update Question Info</button>
+
+
+                        </form>    
                      </div>
 
                  Add a new question

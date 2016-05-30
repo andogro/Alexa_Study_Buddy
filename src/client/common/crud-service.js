@@ -29,10 +29,14 @@
       getEditQuiz: function (quizId) {
         return $http.get('/quiz/edit/' + quizId)
       },
-      editQuiz: function (quiz,questions,id) {
+      editQuiz: function (quiz,id) {
         return $http.post('/quiz/edit/' + id, {
-          quiz: quiz,
-          questions: questions
+          quiz: quiz
+        })
+      },
+      editQuestion: function (question,id) {
+        return $http.post('/question/edit/' + id, {
+          question: question
         })
       },
       deleteQuiz: function (id) {

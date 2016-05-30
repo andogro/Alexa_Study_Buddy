@@ -12,7 +12,7 @@ angular.module('myApp')
     $scope.questions = [];
 
     function Question (id, question, a1, a2, a3, a4) {
-      this.quiz_id = id;
+      this.quest_id = id;
       this.question = question;
       this.a1 = a1;
       this.a2 = a2;
@@ -29,7 +29,7 @@ angular.module('myApp')
            $scope.formData.quiz_id = results.data[0].quiz_id;          
           
           for (var i=0; i<results.data.length; i++) {
-          var newQuestion = new Question(results.data[i].quiz_id, results.data[i].question, results.data[i].a1, results.data[i].a2, results.data[i].a3, results.data[i].a4); 
+          var newQuestion = new Question(results.data[i].quest_id, results.data[i].question, results.data[i].a1, results.data[i].a2, results.data[i].a3, results.data[i].a4); 
           $scope.questions.push(newQuestion);
           newQuestion = "";
           }
@@ -77,7 +77,7 @@ angular.module('myApp')
 //edit question info
   $scope.submitQ = function(question, id) {     
           console.log("this is this question", question)
-          console.log("thi is the id", id);
+          console.log("this is the id", id);
           crudService.editQuestion(question, id)
               .success(function(data) {
                 $scope.questionchanged = true;

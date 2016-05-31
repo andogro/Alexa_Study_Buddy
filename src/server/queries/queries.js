@@ -30,6 +30,14 @@ module.exports = {
             return results;
         });
     },
+    getQuestionByQuiz: function(id){
+        return Questions()
+        .where('questions.quiz_id',id)
+        .select('question', 'a1', 'a2', 'a3', 'a4')
+        .then(function(results) {
+            return results;
+        });
+    },
     getQuizById: function(id){
         return Quizzes().join('questions', 'quizzes.quiz_id', '=', 'questions.quiz_id')
         .where('quizzes.quiz_id',id)
@@ -75,7 +83,7 @@ module.exports = {
         }); 
     },
     addQuestion: function(question) {
-        return Questions().returning(['quiz_id', 'question', 'a1', 'a2', 'a3', 'a4']).insert({
+        return Questions().returning(['quest_id', 'question', 'a1', 'a2', 'a3', 'a4']).insert({
             quiz_id: question.quiz_id,
             question: question.question,
             a1: question.a1,

@@ -80,6 +80,22 @@ var id = req.params.id;
   });
 });
 
+// get questions for an individual quiz
+router.get('/questions/:id', function(req, res, next) {
+var id = req.params.id;
+ queries.getQuestionByQuiz(id)  
+ .then(function(results) {
+   console.log("bring back the data");
+   res.status(200).json({
+      data: results
+    });
+  })
+  .catch(function (err) {
+    return next(err);
+  });
+});
+
+
  // Get create new quiz form
 router.get('/quiz/new', function(req, res, next) {
   res.status(200);

@@ -17,9 +17,9 @@
             questions: questions
           })
        },
-       addQuestion: function(question) {
+      addQuestion: function(addNewQ) {
          return $http.post('/question/new', {
-             question: question
+             question: addNewQ
            })
         },
       getUserQuiz: function(currId) {

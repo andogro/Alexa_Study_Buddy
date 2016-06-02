@@ -5,7 +5,13 @@
 angular.module('myApp')
 .controller('editQuizController', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
 
+
+    $rootScope.user = {};
     $rootScope.loggedIn = true;
+    $rootScope.user.name = JSON.parse(authService.getUserName());
+     
+
+
     $scope.quizchanged = false;
     var quizId = $routeParams.id;
     $scope.formData = {};
@@ -90,6 +96,7 @@ angular.module('myApp')
               crudService.editQuestion(question, id)
                   .success(function(data) {
                     $scope.questionchanged = true;
+                    console.log("this question should have changed");
                   })
                   .error(function(error) {
                       console.log('Error: ' + JSON.stringify(error));

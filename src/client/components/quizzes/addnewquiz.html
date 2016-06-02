@@ -1,8 +1,10 @@
 
     <section>  
         <br>
+        Hello {{currentUser.name}}
+
         Add a New Quiz!
-        Hello {{user.name}}
+
 
         <form ng-submit="submit()">
                   <fieldset class="form-group">
@@ -20,7 +22,7 @@
                     <input name="quiz_tags" type="text" class="form-control" id="quiz_tags" ng-model="formData.quiz_tags" placeholder="Enter at least one tag, comma separate others" required >
                   </fieldset>
 
-                 <p>You must add atleast 1 question to create a new quiz. Always start with the correct answer, it will be randomized during your alexa study.</p>
+                 <p>You must add atleast <strong>5</strong> questions to create a new quiz. Always start with the correct answer, it will be randomized during your Alexa quiz.</p>
            
                   <h4>Question {{CQ+1}}</h4>
                   <fieldset class="form-group">

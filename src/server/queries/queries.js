@@ -105,7 +105,7 @@ module.exports = {
             a4: question.a4,
         })
         .then(function(results) {
-            console.log("update question results"+ JSON.stringify(results));
+            console.log("update/edit question results"+ JSON.stringify(results));
             return results;
         }); 
     },

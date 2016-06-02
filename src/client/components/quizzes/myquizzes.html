@@ -2,12 +2,25 @@
   <div class="medium-6 columns over">
     <section>  
         <br>
-            Hello {{currentUser.name}}<br>
+            Hello {{user.name}}<br>
             Below are your current Quizzes, click to edit or change<br>
+
+<div class="grid-items">
+  <a href="#/quiz/edit/{{item.quiz_id}}" class="grid-item" ng-repeat="item in quizData | unique : 'quiz_name' ">
+    <h1>{{item.quiz_id}}</h1>
+    <h1>{{item.quiz_name}}</h1>
+    <p> {{item.quiz_desc}}<br>
+        tags: {{item.quiz_tags}}<br>
+        by:  {{item.fname}}<br>
+        added: {{item.created | date}}</p>
+  </a>
+</div>
+
+<!-- 
           <ul ng-repeat="item in quizData | unique : 'quiz_name'">
              <li><a href="#/quiz/edit/{{item.quiz_id}}">{{item.quiz_name}}</a></li>
              <li><a href="#/quiz/edit/{{item.quiz_id}}">{{item.quiz_desc}}</a></li> 
-          </ul>
+          </ul> -->
     </section>
   </div>
 </div>    

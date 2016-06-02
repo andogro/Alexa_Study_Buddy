@@ -24,6 +24,12 @@
       // restricted: false,
       // preventLoggedIn: false
     })
+    .when('/about', {
+      templateUrl: '../components/views/about.html',
+      controller: 'homeController'
+      // restricted: false,
+      // preventLoggedIn: false
+    })
     .when('/quizzes/:id',{
       templateUrl: '../components/quizzes/quizindex.html',
       controller: 'quizzesController'

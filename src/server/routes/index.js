@@ -85,7 +85,7 @@ router.get('/questions/:id', function(req, res, next) {
 var id = req.params.id;
  queries.getQuestionByQuiz(id)  
  .then(function(results) {
-   console.log("bring back the data");
+   console.log("bring back the data"+JSON.stringify(results));
    res.status(200).json({
       data: results
     });
@@ -184,7 +184,7 @@ router.post('/question/edit/:id', function(req, res, next) {
 
  queries.editQuestion(question,id)
  .then(function(fullresults) {
-      console.log("full results"+JSON.stringify(fullresults));
+      console.log("full results from edit question"+JSON.stringify(fullresults));
       res.status(200).json({
       data: fullresults
     });

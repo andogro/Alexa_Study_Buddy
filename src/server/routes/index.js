@@ -238,7 +238,7 @@ router.post('/login', function(req, res, next) {
       // if password is correct
       if (comparePassword(password, user.password)) {
         var token = jwt.sign(user, process.env.TOKEN_SECRET, {
-          expiresIn: 500 // expires in 2 hours
+          // expiresIn: 500 // expires in 2 hours
         });
         return res.json({
           success: true,
@@ -293,7 +293,7 @@ router.post('/register', function(req, res, next) {
           u_id: data[0].u_id
         };
         var token = jwt.sign(user, process.env.TOKEN_SECRET, {
-          expiresIn: 500
+          // expiresIn: 500
         });
         res.status(200).json({
             status: "Success",

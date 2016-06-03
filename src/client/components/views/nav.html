@@ -1,4 +1,4 @@
-<header class="centered-navigation" role="banner">
+<header class="centered-navigation" role="banner" ng-controller="navController">
   <div class="centered-navigation-wrapper">
     <a href="javascript:void(0)" class="mobile-logo">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="Logo image">
@@ -12,10 +12,10 @@
             <img src="https://raw.githubusercontent.com/thoughtbot/refills/49db8c0f2f8066c2c3a275781503fe3303a1a9fc/source/images/placeholder.png" alt="Logo image">
           </a>
         </li>
-        <li class="nav-link" ng-hide="loggedIn"><a href="#/login">Login/Register</a></li>
-        <li class="nav-link" ng-show="loggedIn" ng-click="loggedIn=false"><a href="/#/logout">Logout</a></li>
-        <li class="nav-link" ng-show="loggedIn"><a href="#/myquizzes">My Quizzes</a></li>
-        <li class="nav-link" ng-show="loggedIn"><a href="#/quiz/new">Create a Quiz</a></li>
+        <li class="nav-link" ng-show="!authenticated"><a href="#/login">Login/Register</a></li>
+        <li class="nav-link" ng-show="authenticated"><a href="#/myquizzes">My Quizzes</a></li>
+        <li class="nav-link" ng-show="authenticated"><a href="#/quiz/new">Create a Quiz</a></li>
+        <li class="nav-link" ng-show="authenticated" ng-click="authenticated=false"><a href="/#/logout">Logout</a></li>
       </ul>
     </nav>
   </div>

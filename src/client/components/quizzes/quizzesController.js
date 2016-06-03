@@ -20,7 +20,7 @@ angular.module('myApp')
    };
 })
 
-.controller('quizzesController', function($scope, $routeParams, crudService) {
+.controller('quizzesController', ['$scope', '$routeParams', 'crudService', function($scope, $routeParams, crudService) {
     console.log('hello');
     $scope.formData = {};
     $scope.userData = {};
@@ -34,7 +34,7 @@ angular.module('myApp')
         .error(function(error) {
             console.log('Error: ' + error);
         });
-    });
+    }]);
 
 })();
 

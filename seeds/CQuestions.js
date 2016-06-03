@@ -26,11 +26,21 @@ exports.seed = function(knex, Promise) {
     knex('questions').insert(
         {
           quiz_id: 2,
-          question: 'What is the best band of the 90\'s',
-          a1: 'Smashing Pumpkins',
-          a2: 'Cellophane',
-          a3: 'Word Road',
-          a4: 'This n That'
+          question: 'Is slice destructive',
+          a1: 'Yes',
+          a2: 'No',
+          a3: 'Sometimes',
+          a4: 'Depends on the Situation'
+
+        }),
+    knex('questions').insert(
+        {
+          quiz_id: 2,
+          question: 'What does pop mean',
+          a1: 'take the first indexed item out of an array',
+          a2: 'take the last indexed item out of an array',
+          a3: 'Take something out of an object',
+          a4: 'Add an item to an array'
         })                    
     );
 };

@@ -3,16 +3,17 @@
   'use strict';
 
 angular.module('myApp')
-.controller('newQuizzesController', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
-
+.controller('newQuizzesController', ['$scope', '$rootScope', '$routeParams', '$location', 'crudService', 'authService', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
+  
     $scope.formData = {};
-    $rootScope.user = {};
+    $scope.user = {};
     $scope.questionData = {};
-    $rootScope.loggedIn = true;
+    $scope.loggedIn = true;
     $scope.formData.user_id = JSON.parse(authService.getUserID());
     $scope.CQ = 0;
     $scope.quiz = {};
     $scope.questions = [];
+    $scope.user.name = JSON.parse(authService.getUserName());
 
     function Question (question, a1, a2, a3, a4) {
       this.question = question;
@@ -50,7 +51,7 @@ angular.module('myApp')
               });
       };
       
-    });
+    }]);
 
 })();
 

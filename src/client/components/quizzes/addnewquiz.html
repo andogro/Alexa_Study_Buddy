@@ -1,7 +1,7 @@
 
     <section>  
         <br>
-        Hello {{currentUser.name}}
+        Hello {{user.name}}
 
         Add a New Quiz!
 
@@ -50,7 +50,7 @@
                      <label for="answer4">Answer 4</label>
                      <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="answer 4" required >
                    </fieldset>
-
+                  <!-- <quiz-question ng-model="questionData"></quiz-question> -->
                      <button class="addquestion" type="button" ng-click="addNewQuestion()">Add Another Question</button> OR
 
                       <button type="submit" class="btn btn-primary" >Create Your Quiz</button>
@@ -87,14 +87,9 @@
                             <button class="remove" type="button" ng-click="removeQuestion($index)"> delete this question</button>
                      </div>
 
-   <div>
-      {{ questions }}
-   </div>
-
-
-                 
-
-
+                     <div>
+                        {{ questions }}
+                     </div>    
 
               </form>
 

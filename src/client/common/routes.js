@@ -14,33 +14,33 @@
     $routeProvider
     .when('/', {
       templateUrl: '../components/views/home.html',
-      controller: 'homeController'
-      // restricted: false,
-      // preventLoggedIn: true
+      controller: 'homeController',
+      restricted: false,
+      preventLoggedIn: false
     })
     .when('/users', {
       templateUrl: '../components/users/usersindex.html',
-      controller: 'usersController'
-      // restricted: false,
-      // preventLoggedIn: false
+      controller: 'usersController',
+      restricted: false,
+      preventLoggedIn: false
     })
     .when('/about', {
       templateUrl: '../components/views/about.html',
-      controller: 'homeController'
-      // restricted: false,
-      // preventLoggedIn: false
+      controller: 'homeController',
+      restricted: false,
+      preventLoggedIn: false
     })
     .when('/quizzes/:id',{
       templateUrl: '../components/quizzes/quizindex.html',
-      controller: 'quizzesController'
-      // restricted: false,
-      // preventLoggedIn: false
+      controller: 'quizzesController',
+      restricted: false,
+      preventLoggedIn: false
     })
     .when('/quizzes',{
       templateUrl: '../components/quizzes/quizindex.html',
-      controller: 'quizzesController'
-      // restricted: false,
-      // preventLoggedIn: false
+      controller: 'quizzesController',
+      restricted: false,
+      preventLoggedIn: false
     })
     .when('/quiz/new', {
       templateUrl: '../components/quizzes/addnewquiz.html',
@@ -50,9 +50,9 @@
     })
     .when('/singlequiz/:id',{
       templateUrl: '../components/quizzes/singlequiz.html',
-      controller: 'singleQuizController'
-      // restricted: false,
-      // preventLoggedIn: false
+      controller: 'singleQuizController',
+      restricted: false,
+      preventLoggedIn: false
     })    
     .when('/login', {
       templateUrl: '../components/auth/login.html',

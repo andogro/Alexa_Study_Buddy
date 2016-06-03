@@ -15,7 +15,7 @@
           console.log("this is registration info returned as user", user)
           authService.setUserInfo(user);
           $location.path('/quiz/new');
-          $rootScope.currentUser = {
+          $scope.currentUser = {
             name: authService.getUserName(),
             id: authService.getUserID()
           };

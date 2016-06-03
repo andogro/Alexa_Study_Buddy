@@ -3,7 +3,7 @@
   'use strict';
 
 angular.module('myApp')
-.controller('singleQuizController', function($scope, $routeParams, crudService) {
+.controller('singleQuizController', ['$scope', '$routeParams', 'crudService', function($scope, $routeParams, crudService) {
 
     $scope.formData = {};
     $scope.userData = {};
@@ -18,7 +18,7 @@ angular.module('myApp')
         .error(function(error) {
             console.log('Error: ' + error);
         });
-    });
+    }]);
 
 })();
 

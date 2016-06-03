@@ -2,15 +2,12 @@
 
   'use strict';
 
+
 angular.module('myApp')
-.controller('editQuizController', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
+.controller('editQuizController',  ['$scope', '$rootScope', '$routeParams', '$location', 'crudService', 'authService', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
 
-
-    $rootScope.user = {};
-    $rootScope.loggedIn = true;
-    $rootScope.user.name = JSON.parse(authService.getUserName());
-     
-
+    $scope.user = {};
+    $scope.user.name = JSON.parse(authService.getUserName());
 
     $scope.quizchanged = false;
     var quizId = $routeParams.id;
@@ -114,7 +111,8 @@ angular.module('myApp')
                       console.log('Error: ' + JSON.stringify(error));
                   });
           };
-        });
+        
+    }]);
 
 })();
 

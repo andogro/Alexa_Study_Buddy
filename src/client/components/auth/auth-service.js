@@ -12,7 +12,7 @@
     var user = {};
     return {
       login: function(user) {
-        console.log("this is login user"+JSON.stringify(user));
+        // console.log("this is login user"+JSON.stringify(user));
         return $http.post('/login', user);
       },
       logout: function(user) {
@@ -24,7 +24,6 @@
         return $http.post('/register', user);
       },
       setUserInfo: function(userData) {
-        console.log("this is user data to set info" + JSON.stringify(userData));
         $window.localStorage.setItem('user', JSON.stringify(userData.data.user));
         $window.localStorage.setItem('token', JSON.stringify(userData.data.token));
         $window.localStorage.setItem('user_id', JSON.stringify(userData.data.user_id));

@@ -8,7 +8,7 @@
     <link href='//fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body ng-cloak>
   <header>
    <nav ng-include="'components/views/nav.html'"></nav>
   </header>
@@ -17,8 +17,8 @@
 
   <div class="row column">
     <hr>
-    <ul class="menu">
-    </ul>
+<!--     <ul class="menu">
+    </ul> -->
   </div>
 
 <!-- script dependencies -->  
@@ -48,8 +48,11 @@
 <script type="text/javascript" src="components/quizzes/newQuizzesController.js"></script>
 <script type="text/javascript" src="components/quizzes/singleQuizController.js"></script>
 <script type="text/javascript" src="components/quizzes/myQuizzesController.js"></script>
+<script type="text/javascript" src="components/quizzes/myQuizzesDirectives.js"></script>
+<!-- <script type="text/javascript" src="components/quizzes/myQuizzes.js"></script> -->
 <script type="text/javascript" src="components/quizzes/editQuizController.js"></script>
 <script type="text/javascript" src="components/views/homeController.js"></script>
+<script type="text/javascript" src="components/views/navController.js"></script>
 
 
 <!-- to be added later -->

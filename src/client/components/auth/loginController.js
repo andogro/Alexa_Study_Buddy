@@ -14,8 +14,9 @@
         .then(function(user) {
           authService.setUserInfo(user);
           //redirect user to quizzes on login
+          $scope.authenticated = true;
           $location.path('/myquizzes');
-          $rootScope.currentUser = {
+          $scope.currentUser = {
             name: authService.getUserName(),
             id: authService.getUserID()
           };

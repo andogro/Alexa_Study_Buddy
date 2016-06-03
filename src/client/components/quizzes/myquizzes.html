@@ -5,7 +5,9 @@
             Hello {{user.name}}<br>
             Below are your current Quizzes, click to edit or change<br>
 
-<div class="grid-items">
+<quiz-list></quiz-list>
+
+<!-- <div class="grid-items">
   <a href="#/quiz/edit/{{item.quiz_id}}" class="grid-item" ng-repeat="item in quizData | unique : 'quiz_name' ">
     <h1>{{item.quiz_id}}</h1>
     <h1>{{item.quiz_name}}</h1>
@@ -14,7 +16,7 @@
         by:  {{item.fname}}<br>
         added: {{item.created | date}}</p>
   </a>
-</div>
+</div> -->
 
 <!-- 
           <ul ng-repeat="item in quizData | unique : 'quiz_name'">

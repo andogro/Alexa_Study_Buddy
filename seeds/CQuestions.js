@@ -25,7 +25,7 @@ exports.seed = function(knex, Promise) {
         }),
     knex('questions').insert(
         {
-          quiz_id: 2,
+          quiz_id: 5,
           question: 'Is slice destructive',
           a1: 'Yes',
           a2: 'No',
@@ -35,7 +35,7 @@ exports.seed = function(knex, Promise) {
         }),
     knex('questions').insert(
         {
-          quiz_id: 2,
+          quiz_id: 5,
           question: 'What does pop mean',
           a1: 'take the first indexed item out of an array',
           a2: 'take the last indexed item out of an array',

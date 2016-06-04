@@ -44,8 +44,8 @@ exports.seed = function(knex, Promise) {
     knex('quizzes').insert(
         {
           user_id: 2,
-          quiz_name: 'The Tech Bubble',
-          quiz_desc: 'Is the tech bubble about to burst?',
+          quiz_name: 'Javascript',
+          quiz_desc: 'Javascript is easy if you can learn to tightrope drunk.',
           quiz_tags: 'angular, ember',
           created: '2016-03-16 20:07:28-06',
           last_update: '2016-03-21 20:07:28-06'
@@ -55,8 +55,8 @@ exports.seed = function(knex, Promise) {
         {
           user_id: 3,
           quiz_name: 'Steve Jobs',
-          quiz_desc: 'A quiz about Steve Jobs',
-          quiz_tags: 'javascript, Steve Jobs',
+          quiz_desc: 'Visionary, Lunatic',
+          quiz_tags: 'Steve Jobs, Apple',
           created: '2016-04-22 20:07:28-06',
           last_update: '2016-05-02 20:07:28-06'
         })

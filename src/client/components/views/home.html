@@ -13,13 +13,15 @@
 </div>   
 
 <div class="grid-items">
-  <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item" ng-repeat="quiz in quizData | filter:search" ng-if="$index >= 4">
+  <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item" ng-repeat="quiz in quizData | filter:search">
+
     <h1>{{quiz.quiz_id}}</h1>
     <h1>{{quiz.quiz_name}}</h1>
     <p> {{quiz.quiz_desc}}<br>
         tags: {{quiz.quiz_tags}}<br>
         by:  {{quiz.fname}}<br>
         added: {{quiz.created | date}}</p>
+  </span>      
   </a>
 </div>
 

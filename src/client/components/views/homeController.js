@@ -6,7 +6,8 @@ angular.module('myApp')
 
 .controller('homeController', function($scope, $http, authService) {
     
-
+    $scope.nav ={}
+    $scope.nav.authenticated=true;
     // Get all users
     $http.get('/quizzes')
         .success(function(results) {

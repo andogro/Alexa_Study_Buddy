@@ -5,10 +5,12 @@
 angular.module('myApp')
 .controller('newQuizzesController', ['$scope', '$rootScope', '$routeParams', '$location', 'crudService', 'authService', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
   
+    $rootScope.nav = {};
+    $rootScope.nav.authenticated = true;
+
     $scope.formData = {};
     $scope.user = {};
     $scope.questionData = {};
-    $scope.loggedIn = true;
     $scope.formData.user_id = JSON.parse(authService.getUserID());
     $scope.CQ = 0;
     $scope.quiz = {};

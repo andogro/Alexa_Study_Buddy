@@ -22,15 +22,12 @@ angular.module('myApp')
 
 .controller('myQuizzesController', ['$rootScope', '$scope', '$location', 'crudService', 'authService',  function($rootScope, $scope, $location, crudService, authService) {
     
-
     $scope.user = {};
-    $scope.authenticated = true;
-    console.log("this is scope authenticated",$scope.authenticated)
     $scope.user.name = JSON.parse(authService.getUserName());
-    var userId = authService.getUserID();
- 
-    $scope.formData = {};
-    $scope.userData = {};
+    $rootScope.nav = {};
+    $rootScope.nav.authenticated = true;
+    // $scope.formData = {};
+    // $scope.userData = {};
 
     }]);
       

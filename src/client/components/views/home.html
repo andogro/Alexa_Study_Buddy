@@ -1,5 +1,4 @@
-<div class="row">
-  <div class="medium-6 medium-centered large-4 large-centered columns">
+
     <br>
     <h3>A quiz module for anyone with Alexa</h3>
     <h2>To get started, say "Alexa, launch study buddy". She will ask you for a quiz number, just say the number and the questions will begin!</h2>
@@ -9,8 +8,6 @@
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
   </button>
  </form> 
-  </div>
-</div>   
 
 <div class="grid-items">
   <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item" ng-repeat="quiz in quizData | filter:search">
@@ -20,8 +17,7 @@
     <p> {{quiz.quiz_desc}}<br>
         tags: {{quiz.quiz_tags}}<br>
         by:  {{quiz.fname}}<br>
-        added: {{quiz.created | date}}</p>
-  </span>      
+        added: {{quiz.created | date}}</p>    
   </a>
 </div>
 

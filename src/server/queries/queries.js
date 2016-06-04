@@ -26,7 +26,6 @@ module.exports = {
         return Quizzes().join('questions', 'quizzes.quiz_id', '=', 'questions.quiz_id')
         .where('quizzes.user_id',id)
         .then(function(results) {
-            console.log("user quiz results"+ JSON.stringify(results));
             return results;
         });
     },
@@ -42,13 +41,10 @@ module.exports = {
         return Quizzes().join('questions', 'quizzes.quiz_id', '=', 'questions.quiz_id')
         .where('quizzes.quiz_id',id)
         .then(function(results) {
-            console.log("one quiz results"+JSON.stringify(results));
             return results;
         });
     },
     addQuiz: function(quiz, questions){
-        console.log("this is quiz query"+ JSON.stringify(quiz))
-        console.log("this is questions query"+ JSON.stringify(questions))
         return Quizzes().insert({
             quiz_name: quiz.quizname,
             quiz_desc: quiz.quizdesc,
@@ -62,8 +58,7 @@ module.exports = {
             questions.forEach(function(element){
             element.quiz_id = quiz_id;
             });
-            console.log("this is questions before insert"+JSON.stringify(questions));
-            return Questions()
+           return Questions()
             .insert(
              questions
           )    
@@ -78,7 +73,6 @@ module.exports = {
             last_update: knex.fn.now()
         })
         .then(function(results) {
-            console.log("update quiz results"+ JSON.stringify(results));
             return results;
         }); 
     },
@@ -105,8 +99,7 @@ module.exports = {
             a4: question.a4,
         })
         .then(function(results) {
-            console.log("update/edit question results"+ JSON.stringify(results));
-            return results;
+          return results;
         }); 
     },
     deleteQuestion: function(id) {
@@ -119,53 +112,5 @@ module.exports = {
           return results;
         });
      }
-
-
-
-    // !Routes to be added
-    // addQuestion: function(deck_id,question,answer,q_img,a_img){
-    //       return Cards().insert({
-    //           deck_id: deck_id
-    //           // question: question,
-    //           answer: answer,
-    //           q_img: q_img,
-    //           a_img: a_img,
-    //       })
-    //       .then(function(results) {
-    //           return results;
-    //       });
-    //     }, 
-
-    // addUser: function(fname,lname,email,password,img,bio){
-    //     return Users().insert({
-    //         fname: fname,
-    //         lname: lname,
-    //         email: email,
-    //         password: password,
-    //         u_img: img,
-    //         bio: bio
-    //     })
-    //     .then(function(results) {
-    //         return results;
-    //     });
-    // },
-    // editUser: function(id,fname,lname,email,password,img,bio) {
-    //     return Users().where('u_id',id).update({
-    //         fname: fname,
-    //         lname: lname,
-    //         email: email,
-    //         password: password,
-    //         u_img: img,
-    //         bio: bio
-    //     })
-    //     .then(function(results) {
-    //         return results;
-    //     }); 
-    // },
-    // deleteUser: function(id) {
-    //   return Users().where('u_id', id).del().then(function(results) {
-    //       return results;
-    //     });
-    //  }
 
 };

@@ -5,14 +5,13 @@
   angular.module('myApp')
     .service('authService', authService);
 
-  authService.$inject = ['$http', '$window'];
+  authService.$inject = ['$http', '$window', '$rootScope'];
 
 
-  function authService($http, $window) {
+  function authService($http, $window, $rootScope) {
     var user = {};
     return {
       login: function(user) {
-        // console.log("this is login user"+JSON.stringify(user));
         return $http.post('/login', user);
       },
       logout: function(user) {
@@ -20,8 +19,7 @@
         $window.localStorage.clear();
       },
       register: function(user) {
-        console.log("this is user in register function from authservice"+JSON.stringify(user));
-        return $http.post('/register', user);
+       return $http.post('/register', user);
       },
       setUserInfo: function(userData) {
         $window.localStorage.setItem('user', JSON.stringify(userData.data.user));
@@ -30,7 +28,6 @@
         $window.localStorage.setItem('active', true);
       },
       edit: function(user) {
-       console.log("this is edit route"+user);
        return $http.post('/edit'+'', user)
       },
       getUserName: function() {

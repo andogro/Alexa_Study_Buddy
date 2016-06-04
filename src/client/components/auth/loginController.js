@@ -9,12 +9,14 @@
 
   function loginController($rootScope, $scope, $location, authService) {
     $scope.user = {};
+
     $scope.login = function() {
       authService.login($scope.user)
         .then(function(user) {
           authService.setUserInfo(user);
+          $rootScope.nav = {};
+          $rootScope.nav.authenticated = true;
           //redirect user to quizzes on login
-          $scope.authenticated = true;
           $location.path('/myquizzes');
           $rootScope.currentUser = {
             name: authService.getUserName(),

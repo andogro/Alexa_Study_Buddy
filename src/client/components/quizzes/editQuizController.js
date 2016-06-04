@@ -8,7 +8,9 @@ angular.module('myApp')
 
     $scope.user = {};
     $scope.user.name = JSON.parse(authService.getUserName());
-
+    $rootScope.nav = {};
+    $rootScope.nav.authenticated = true;
+   
     $scope.quizchanged = false;
     var quizId = $routeParams.id;
     $scope.formData = {};

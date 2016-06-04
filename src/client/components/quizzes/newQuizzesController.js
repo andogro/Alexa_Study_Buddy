@@ -35,6 +35,7 @@ angular.module('myApp')
     
   $scope.removeQuestion = function(index) {
     $scope.questions.splice(index,1);
+    $scope.CQ--;
   };
 
 

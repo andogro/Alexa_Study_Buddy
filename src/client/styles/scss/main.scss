@@ -625,6 +625,10 @@ form.search-bar {
     flex: 1 1 40em;
   }
 
+  .flex-box-mid {
+    max-width: 90%;
+  }
+
   .flex-box-middle {
     max-width: 100%;
     
@@ -647,5 +651,20 @@ form.search-bar {
   padding: 1em;
   height: 50px;
 }
+
+///////buttons
+
+.button_remove {
+  background: red;
+  // font-size:$article-font-size;
+}
+
+.button_create {
+  background: green;
+  // font-size:$article-font-size;
+}
+
+
+
 
 

@@ -786,6 +786,8 @@ form.search-bar {
       margin: auto; }
   .flex-boxes .flex-box-big {
     flex: 1 1 40em; }
+  .flex-boxes .flex-box-mid {
+    max-width: 90%; }
   .flex-boxes .flex-box-middle {
     max-width: 100%; }
     @media screen and (min-width: 53.75em) {
@@ -800,3 +802,9 @@ form.search-bar {
   margin: 1em;
   padding: 1em;
   height: 50px; }
+
+.button_remove {
+  background: red; }
+
+.button_create {
+  background: green; }

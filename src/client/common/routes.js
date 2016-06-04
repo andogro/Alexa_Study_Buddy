@@ -61,8 +61,8 @@
       preventLoggedIn: true
     })
     .when('/register', {
-      templateUrl: '../components/auth/login.html',
-      controller: 'loginController',
+      templateUrl: '../components/auth/register.html',
+      controller: 'registerController',
       restricted: false,
       preventLoggedIn: true
     })

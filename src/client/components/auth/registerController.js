@@ -21,7 +21,7 @@
           };
         })
         .catch(function(err) {
-          // check status code, send message
+          $scope.error = err.data.message; 
           console.log(err);
         });
     };

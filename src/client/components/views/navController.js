@@ -3,30 +3,26 @@
   'use strict';
 
 angular.module('myApp')
-.controller('navController', function($scope, $http, authService) {
+.controller('navController', ['$scope', '$rootScope' , '$http', "authService" , function($scope, $rootScope, $http, authService) {
      
-   // $scope.loggedin = {loggedIn: false};
-   //  if ($scope.user = null) {
-   //    scope.loggedin.loggedIn = true;
+
+    $scope.authenticated = false;
+    $scope.user.name = JSON.parse(authService.getUserName());
     
-    // $scope.authenticated = false;
+    $scope.authenticated = JSON.parse(authService.getActiveUser());
+       
 
-    $scope.user = JSON.parse(authService.getUserName());
+    console.log("User name from nav controller)", $scope.user.name);
 
-    if(!$scope.user) {
-       $scope.authenticated = false;
-    }
-
-    if($scope.user) {
-      $scope.authenticated = true
-    }
+    console.log("Authenticated from nav controller)", $scope.authenticated);
+    
 
     $scope.logout = function(){
-      authService.logout($scope.user);
+      authService.logout($scope.user.name);
       $scope.user = JSON.parse(authService.getUserName());            
-      console.log('user after logout', $scope.user);
+      console.log('user after logout', $scope.user.name);
     }
 
-        });
+  }]);
 
 })();

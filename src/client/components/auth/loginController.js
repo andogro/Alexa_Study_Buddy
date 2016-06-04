@@ -16,32 +16,17 @@
           //redirect user to quizzes on login
           $scope.authenticated = true;
           $location.path('/myquizzes');
-          $scope.currentUser = {
+          $rootScope.currentUser = {
             name: authService.getUserName(),
             id: authService.getUserID()
           };
         })
         .catch(function(err) {
-          console.log(err);
+          $scope.error = err.data.message; 
+          console.log($scope.error);
         });
     };
 
-  $scope.register = function() {
-    authService.register($scope.user)
-      .then(function(user) {
-        console.log("this is registration info returned as user", user)
-        authService.setUserInfo(user);
-        $location.path('/quiz/new');
-        $scope.currentUser = {
-          name: authService.getUserName(),
-          id: authService.getUserID()
-        };
-      })
-      .catch(function(err) {
-        // check status code, send message
-        console.log(err);
-      });
-  };
 }
 
 })();

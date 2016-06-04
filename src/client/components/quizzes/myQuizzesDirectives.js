@@ -21,7 +21,7 @@
 
   myController.$inject = ['crudService', 'authService']
 
-  function myController(crudService, authService){
+  function myController(crudService, authService) {
     var vm = this;
     var userId = authService.getUserID();
 

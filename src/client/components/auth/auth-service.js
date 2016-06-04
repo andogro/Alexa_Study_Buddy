@@ -27,6 +27,7 @@
         $window.localStorage.setItem('user', JSON.stringify(userData.data.user));
         $window.localStorage.setItem('token', JSON.stringify(userData.data.token));
         $window.localStorage.setItem('user_id', JSON.stringify(userData.data.user_id));
+        $window.localStorage.setItem('active', true);
       },
       edit: function(user) {
        console.log("this is edit route"+user);
@@ -34,6 +35,9 @@
       },
       getUserName: function() {
         return $window.localStorage.getItem('user');
+      },
+      getActiveUser: function() {
+        return $window.localStorage.getItem('active');
       },
       getUserToken: function() {
         var token = $window.localStorage.getItem('token');

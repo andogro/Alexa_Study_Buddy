@@ -9,9 +9,9 @@
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
   </button>
  </form> 
-
+<br>
 <div class="grid-items">
-  <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item" ng-repeat="quiz in quizData | filter:search">
+  <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item animate-repeat" ng-repeat="quiz in quizData | filter:search">
 
     <h2>{{quiz.quiz_id}}</h2>
     <h1>{{quiz.quiz_name}}</h1>

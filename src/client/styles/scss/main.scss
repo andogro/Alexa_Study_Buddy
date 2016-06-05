@@ -652,7 +652,7 @@ form.search-bar {
   }
 }
 
-/////// Login Form
+/////////////////////////////////////// Login Form
 
 .help-block {
   border: 1px solid red;
@@ -661,8 +661,7 @@ form.search-bar {
   height: 50px;
 }
 
-///////buttons
-
+///////////////////////////////////EXTRA STYLES
 
 
 .add-quiz {
@@ -749,7 +748,108 @@ form.search-bar {
   @include reset-display();
 }
 
+////////////////////////////SEARCH ANIMATIONS
+
+.animate-repeat {
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.3s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height: 18em;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+}
 
 
 
+////////////////////////////// UPDATE MESSAGE ANIMATIONS
+.box-one {
+  margin:10px 0 20px 0;
+  padding:10px;
+  border:1px solid rgba(0,0,0,0.2);
+  background: green;
+  color:#fff;
+  border-radius:4px;
+}
+
+.box-one.ng-hide-add {
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:0;
+    transform: scale(0.5);
+  }
+}
+
+
+.box-one.ng-hide-remove {
+  -webkit-animation:0.3s show;
+  animation:0.3s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% { 
+    opacity:1;
+    transform: scale(1);
+  }
+}
 

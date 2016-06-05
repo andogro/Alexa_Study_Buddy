@@ -97,14 +97,20 @@ angular.module('myApp')
           $scope.updated = false; }, 2000);
     };
 
- //update alert Question
+ //add alert Question
      $scope.updatedq = false;
      $scope.updateButtonQ = function(){
         $scope.updatedq = true;
         $timeout(function () {
           $scope.updatedq = false; }, 2000);
     };
-
+ //update alert Question
+     $scope.updatedquest = false;
+     $scope.updateButtonQuest = function(){
+        $scope.updatedquest = true;
+        $timeout(function () {
+          $scope.updatedquest = false; }, 2000);
+    };
 
 
 //edit question info

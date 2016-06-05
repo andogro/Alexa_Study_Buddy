@@ -26,7 +26,8 @@
 
                   <button class="button button-remove" type="button" ng-click="deleteQuiz(formData.quiz_id)"> Delete this Quiz</button>
 
-                  <div ng-show="updated" class="help-block">Quiz information has been Updated!</div>
+                  <div ng-show="updated" class="box-one">Quiz information has been Updated!</div>
+
            </form>
           </div>
         </div>    
@@ -65,9 +66,9 @@
 
                           <button class="button button-remove" type="button" ng-click="removeQuestion(question.quest_id, $index)"> delete this question</button>
                           
-                          <button type="submit" class="button button-add" ng-click="updateButton()">Update Question Info</button>
+                          <button type="submit" class="button button-add" ng-click="updateButtonQuest()">Update Question Info</button>
 
-                          <div ng-show="updated" class="help-block">Question {{$index + 1}} has been Updated!</div>
+                          <div ng-show="updatedquest" class="box-one">Question {{$index + 1}} has been Updated!</div>
                       
                     </form>    
                  </div>
@@ -103,7 +104,7 @@
 
                     <button class="addquestion" type="submit" ng-click="updateButtonQ()" ng-disabled="addQuestion.$invalid"> Add this Question</button>
 
-                    <div ng-show="updatedq" class="help-block">New Question Added!</div>
+                    <div ng-show="updatedq" class="box-one">New Question Added!</div>
 
                 </form>
 <!--                 <div>{{ questions }}</div>  -->

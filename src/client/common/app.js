@@ -4,7 +4,8 @@
 
   angular.module('myApp', [
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ngAnimate'
   ]);
 
 })();

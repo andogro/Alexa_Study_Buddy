@@ -157,15 +157,16 @@ section {
 
 .ind-questions {
   $action-color: #477DCA !default;
+  $border-color: #FFF;
   $base-background-color: white !default;
   $medium-screen: 40em !default;
   $large-screen: 53.75em !default;
-  $ind-questions-background: $base-background-color;
-  $ind-question-background: #72BFBF;
-  $ind-question-colors:
-    desaturate($action-color, 30%),
-    #FFF,
-    #CCC;
+  $ind-questions-background: #FFF;
+  $ind-question-background: transparentize(#E3D743, 0.9);
+  // $ind-question-colors:
+  //   desaturate($action-color, 30%),
+  //   #FFF,
+  //   #CCC;
   $ind-question-border-size: 9px;
   $ind-question-columns: 3;
   $ind-question-big-columns: 8;
@@ -176,9 +177,9 @@ section {
 
   .ind-question {
     background: $ind-question-background;
-    border-bottom: $ind-question-border-size solid $ind-questions-background;
-    border-left: ($ind-question-border-size / 2) solid $ind-questions-background;
-    border-right: ($ind-question-border-size / 2) solid $ind-questions-background;
+    border-bottom: $ind-question-border-size solid $border-color;
+    border-left: ($ind-question-border-size / 2) solid $border-color;
+    border-right: ($ind-question-border-size / 2) solid $border-color;
     border-top: 0;
     cursor: pointer;
     float: left;
@@ -195,21 +196,21 @@ section {
       @include ind-question-columns($ind-question-columns);
     }
 
-    @for $i from 1 through length($ind-question-colors) { // assign colors from $ind-question-colors list
-      &:nth-child(#{$i}) {
-        $background-from-list: $white;
-        background-color: $background-from-list;
-        box-shadow: inset 0 0 1px 2px lighten(#92B1E3, 10%);
+    // @for $i from 1 through length($ind-question-colors) { // assign colors from $ind-question-colors list
+    //   &:nth-child(#{$i}) {
+    //     $background-from-list: $white;
+    //     background-color: $background-from-list;
+    //     box-shadow: inset 0 0 1px 2px lighten(#92B1E3, 10%);
 
         &:focus,
         &:hover {
-          background-color: darken($background-from-list, 10%);
+          background-color: lighten(#E3D743, 30%);
           background-position: top;
           background-repeat: no-repeat;
           background-size: cover;
         }
-      }
-    }
+    //   }
+    // }
   }
 
   .ind-question h1 {
@@ -670,7 +671,7 @@ form.search-bar {
 }
 
 .font-red {
-  color: $light-blue;
+  color: tomato;
   font-style: italic;
 }
 

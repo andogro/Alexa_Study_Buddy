@@ -1,10 +1,10 @@
 <div class="flex-boxes">
-  <a href="javascript:void(0)" class="flex-box flex-box-big">
+  <div class="flex-box flex-box-big">
         <br>
         <h3 class ="add-quiz">{{quizData[0].quiz_name}}</h3>
         <h3 class ="add-quiz">Quiz number {{quizData[0].quiz_id}}</h3> 
         <h3 class ="add-quiz">{{quizData[0].quiz_desc}}</h3>
-  </a>
+  </div>
 </div>
 
 <form class="search-bar" role="search">
@@ -16,12 +16,12 @@
   
 
 <div class="ind-questions">
-  <a href="#/singlequiz/{{quiz.quiz_id}}" class="ind-question" ng-repeat="item in quizData | filter:search">
+  <div class="ind-question" ng-repeat="item in quizData | filter:search">
       <h1>{{item.question}}?</h1>
         <p>1) {{item.a1}}<br>
            2) {{item.a2}}<br>
            3) {{item.a3}}<br>
            4) {{item.a4}}<br>
         </p>
-  </a>
+  </div>
 </div>

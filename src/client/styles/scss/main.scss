@@ -662,21 +662,7 @@ form.search-bar {
 
 ///////buttons
 
-.button-remove {
-  background: red;
-  margin-bottom: 1em; 
-  // font-size:$article-font-size;
-}
 
-.button-create {
-  background: green;
-  margin-bottom: 1em; 
-  // font-size:$article-font-size;
-}
-
-.button-add {
-margin-bottom: 1em;  // font-size:$article-font-size;
-}
 
 .add-quiz {
   font-size: 1.4em;
@@ -686,6 +672,80 @@ margin-bottom: 1em;  // font-size:$article-font-size;
 .font-red {
   color: $light-blue;
   font-style: italic;
+}
+
+
+///////////// SIDE IMAGE
+
+.side-image {
+  $base-line-height: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $large-screen: 53.75em !default;
+  $base-font-color: $dark-gray !default;
+  $side-image-background-top: #B5EBEB;
+  $side-image-background-bottom: #5DAC5D;
+  $side-image-content-background: #F9F9F9;
+  $side-image-border: white;
+  margin-top: 1em;
+  // $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, 0.8), 30%);
+
+  background: $side-image-content-background;
+
+  @include media($large-screen) {
+    @include row(table);
+  }
+
+  .images-wrapper {
+    background: url("/images/echo_1.jpg"),
+                linear-gradient($side-image-background-top, $side-image-background-bottom),
+                no-repeat $side-image-background-top scroll;
+    background-color: $side-image-background-top;
+    background-size: cover;
+    // border-bottom: $side-image-border;
+    display: block;
+    min-height: 12em;
+    padding: 3em;
+
+    @include media($large-screen) {
+      @include span-columns(4);
+      background-position: bottom;
+      background-size: cover;
+      border-right: $side-image-border;
+    }
+  }
+
+  .side-image-content {
+    @include span-columns(12);
+    padding: 1em 1em 4em 1em;
+
+    @include media($large-screen) {
+      @include span-columns(8);
+      padding: 4em 4em 8em 4em;
+    }
+
+    h1 {
+      margin-bottom: 0.9em;
+    }
+
+    h4 {
+      background: #BBB;
+      color: white;
+      display: inline-block;
+      font-size: 0.75em;
+      margin-bottom: 1.3em;
+      padding: 3px 8px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $base-font-color;
+      line-height: $base-line-height;
+      margin-bottom: 3em;
+    }
+  }
+
+  @include reset-display();
 }
 
 

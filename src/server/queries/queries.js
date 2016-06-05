@@ -45,7 +45,6 @@ module.exports = {
         });
     },
     addQuiz: function(quiz, questions){
-        console.log("back end add quiz in queries", quiz);
         return Quizzes().insert({
             quiz_name: quiz.quizname,
             quiz_desc: quiz.quizdesc,
@@ -88,7 +87,6 @@ module.exports = {
             a4: question.a4,
         })
         .then(function(results) {
-            console.log("adding an additional question"+ JSON.stringify(results));
             return results;
         }); 
     },

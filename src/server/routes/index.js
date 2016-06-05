@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var pg = require('pg');
-var connectionString = 'postgres://localhost:5432/alexaquiz';
+// var pg = require('pg');
+// var connectionString = 'postgres://localhost:5432/alexaquiz';
 var knex = require('../../../db/knex');
 var queries = require('../queries/queries');
 var uqueries = require('../queries/user_queries');
-var path = require('path');
-var passport = require('passport');
+// var path = require('path');
+// var passport = require('passport');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
@@ -123,13 +123,13 @@ router.post('/quiz/new', function(req, res, next) {
 
 //  Create a new quiz
 router.post('/question/new', function(req, res, next) {
- var question = {};
- question.quiz_id = req.body.question.quiz_id;
- question.question = req.body.question.question;
- question.a1= req.body.question.a1;
- question.a2= req.body.question.a2;
- question.a3= req.body.question.a3;
- question.a4= req.body.question.a4;
+   var question = {};
+   question.quiz_id = req.body.question.quiz_id;
+   question.question = req.body.question.question;
+   question.a1= req.body.question.a1;
+   question.a2= req.body.question.a2;
+   question.a3= req.body.question.a3;
+   question.a4= req.body.question.a4;
 
  queries.addQuestion(question)
  .then(function(fullresults) {
@@ -157,11 +157,11 @@ var id = req.params.id;
 
 //  Edit quiz
 router.post('/quiz/edit/:id', function(req, res, next) {
- var quiz = {};
- quiz.quiz_name = req.body.quiz.quiz_name;
- quiz.quiz_desc = req.body.quiz.quiz_desc;
- quiz.quiz_tags = req.body.quiz.quiz_tags;
- var id = req.body.quiz.quiz_id;
+   var quiz = {};
+   quiz.quiz_name = req.body.quiz.quiz_name;
+   quiz.quiz_desc = req.body.quiz.quiz_desc;
+   quiz.quiz_tags = req.body.quiz.quiz_tags;
+   var id = req.body.quiz.quiz_id;
 
  queries.editQuiz(quiz,id)
  .then(function(fullresults) {
@@ -175,13 +175,13 @@ router.post('/quiz/edit/:id', function(req, res, next) {
 //  Edit questions
 router.post('/question/edit/:id', function(req, res, next) {
 
- var question = {};
- question.question = req.body.question.question_name;
- question.a1 = req.body.question.a1;
- question.a2 = req.body.question.a2;;
- question.a3 = req.body.question.a3;
- question.a4 = req.body.question.a4;
- var id = req.params.id;
+   var question = {};
+   question.question = req.body.question.question_name;
+   question.a1 = req.body.question.a1;
+   question.a2 = req.body.question.a2;;
+   question.a3 = req.body.question.a3;
+   question.a4 = req.body.question.a4;
+   var id = req.params.id;
 
  queries.editQuestion(question,id)
  .then(function(fullresults) {
@@ -222,24 +222,22 @@ router.post('/quiz/delete/:id', function(req,res,next) {
 // Login & Authentication
 // login route
 router.post('/login', function(req, res, next) {
-  var email = req.body.email;
-  var password = req.body.password;
-  uqueries.login(email,password)
+    var email = req.body.email;
+    var password = req.body.password;
+    uqueries.login(email,password)
   .then(function(data) {
     // if username does not exist
-    console.log("DATA from Login post route", data)
     if (!data.length) {
       return res.status(401).json({
       status: 'fail',
-      message: 'Email does not exist'
+      message: 'The email or password is incorrect, please try again.'
       });
     } else {
       var user = data[0];
-      console.log("user name" + user.fname, "user password" + user.password)
       // if password is correct
       if (comparePassword(password, user.password)) {
         var token = jwt.sign(user, process.env.TOKEN_SECRET, {
-          // expiresIn: 500 // expires in 2 hours
+        expiresIn: 500 // expires in 2 hours
         });
         return res.json({
           success: true,
@@ -252,7 +250,7 @@ router.post('/login', function(req, res, next) {
       } else { // password is incorrect
         return res.status(401).json({
         status: 'fail',
-        message: 'Incorrect password'
+        message: 'The email or password is incorrect, please try again.'
         });
       }
     }
@@ -274,7 +272,7 @@ router.post('/register', function(req, res, next) {
     if(data.length) {
       return res.status(409).json({
       status: 'fail',
-      message: 'Email already exists'
+      message: 'This email already exists in our system. Please login.'
       });
     } else { // create new user
       // hash and salt the password
@@ -286,7 +284,6 @@ router.post('/register', function(req, res, next) {
         password: hashedPassword
       }, '*')
       .then(function(data) {
-        console.log("returned data from registration route", data);
         var user = {
           fname: fname,
           email: email,
@@ -323,23 +320,5 @@ function hashPassword (password) {
 function comparePassword(password, hashedpassword) {
     return bcrypt.compareSync(password, hashedpassword);
 }
-
-/*not currently using
-function ensureAuthenticated(req, res, next) {
-  if(req.user) {
-    return next();
-  } else {
-    return res.redirect('/login');
-  }
-}
-//not currently using
-function loginRedirect(req, res, next) {
-  if(req.user) {
-    return res.redirect('/');
-  } else {
-    return next();
-  }
-}*/
-
 
 module.exports = router;

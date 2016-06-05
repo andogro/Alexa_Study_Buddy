@@ -33,6 +33,17 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
       background-color: #1565c0; }
 
+.button-remove {
+  background: tomato;
+  margin-bottom: 1em; }
+
+.button-create {
+  background: green;
+  margin-bottom: 1em; }
+
+.button-add {
+  margin-bottom: 1em; }
+
 fieldset {
   background-color: transparent;
   border: 1px solid #DDD;
@@ -810,17 +821,6 @@ form.search-bar {
   padding: 1em;
   height: 50px; }
 
-.button-remove {
-  background: red;
-  margin-bottom: 1em; }
-
-.button-create {
-  background: green;
-  margin-bottom: 1em; }
-
-.button-add {
-  margin-bottom: 1em; }
-
 .add-quiz {
   font-size: 1.4em;
   text-align: center; }
@@ -828,3 +828,49 @@ form.search-bar {
 .font-red {
   color: #5D737E;
   font-style: italic; }
+
+.side-image {
+  margin-top: 1em;
+  background: #F9F9F9; }
+  @media screen and (min-width: 53.75em) {
+    .side-image {
+      display: table;
+      width: 100%;
+      table-layout: fixed; } }
+  .side-image .images-wrapper {
+    background: url("/images/echo_1.jpg"), linear-gradient(#B5EBEB, #5DAC5D), no-repeat #B5EBEB scroll;
+    background-color: #B5EBEB;
+    background-size: cover;
+    display: block;
+    min-height: 12em;
+    padding: 3em; }
+    @media screen and (min-width: 53.75em) {
+      .side-image .images-wrapper {
+        display: table-cell;
+        width: 33.33333%;
+        background-position: bottom;
+        background-size: cover;
+        border-right: white; } }
+  .side-image .side-image-content {
+    display: table-cell;
+    width: 100%;
+    padding: 1em 1em 4em 1em; }
+    @media screen and (min-width: 53.75em) {
+      .side-image .side-image-content {
+        display: table-cell;
+        width: 66.66667%;
+        padding: 4em 4em 8em 4em; } }
+    .side-image .side-image-content h1 {
+      margin-bottom: 0.9em; }
+    .side-image .side-image-content h4 {
+      background: #BBB;
+      color: white;
+      display: inline-block;
+      font-size: 0.75em;
+      margin-bottom: 1.3em;
+      padding: 3px 8px;
+      text-transform: uppercase; }
+    .side-image .side-image-content p {
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 3em; }

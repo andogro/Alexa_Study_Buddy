@@ -3,7 +3,7 @@
         <br>
          <h3 class ="add-quiz">Hello {{user.name}}, Add a New Quiz!</h3>
 
-        <form ng-submit="submit()">
+        <form name="addQuiz" ng-submit="submit()">
 
           <div class="flex-boxes">
             <a href="javascript:void(0)" class="flex-box flex-box-big">
@@ -33,6 +33,7 @@
                         <fieldset class="form-group">
                           <label for="question">Question </label>
                           <input name="question" type="text" class="form-control" id="question" ng-model="questionData.question" placeholder="Question" required>
+                         <p ng-show="addQuiz.question.$invalid && !addQuiz.question.$pristine" class="help-block">You name is required.</p>
                         </fieldset>
 
 
@@ -56,9 +57,13 @@
                          <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="answer 4" required >
                        </fieldset>
                   <!-- <quiz-question ng-model="questionData"></quiz-question> -->
-                     <button class="button button-add" type="button" ng-click="addNewQuestion()">Add Another Question</button> <strong>OR</strong>
+                     
+                       <button type="submit" ng-disabled="addQuiz.$invalid" class="button button-create" >Create Your Quiz</button>
+                       
+                       <strong>OR</strong>
+                       
+                       <button class="button button-add" type="button" ng-click="addNewQuestion()" ng-disabled="addQuiz.$invalid" >Add Another Question</button> 
 
-                      <button type="submit" class="button button-create" >Create Your Quiz</button>
   </a>
   <a href="javascript:void(0)" class="flex-box flex-box-mid">
                  <h1 class="flex-title">Questions You Have Added</h1>
@@ -89,7 +94,7 @@
                             <label for="answer4">Answer 4</label>
                             <input name="a4" <input type="text" class="form-control" id="a4" ng-model="question.a4" placeholder ="answer 4" required >
                           </fieldset>
-<button class="button button-remove" type="button" ng-click="removeQuestion($index)"> Delete this Question</button>
+                              <button class="button button-remove" type="button" ng-click="removeQuestion($index)"> Delete this Question</button>
 
                      </div>
 <!-- 
@@ -98,43 +103,6 @@
                      </div>    
  -->
               </form>
-
-
-  </a>
-</div>
-
-<!-- 
-                  <h4>Question {{CQ+1}}</h4>
-                  <fieldset class="form-group">
-                    <label for="question">Question </label>
-                    <input name="question" type="text" class="form-control" id="question" ng-model="questionData.question" placeholder="Question" required>
-                  </fieldset>
-
-
-                  <fieldset class="form-group">
-                    <label for="answer1">Answer 1</label>
-                    <input name="a1" <input type="text" class="form-control" id="a1" ng-model="questionData.a1" placeholder ="answer 1" required >
-                  </fieldset>
-
-                  <fieldset class="form-group">
-                     <label for="answer2">Answer 2</label>
-                     <input name="a2" <input type="text" class="form-control" id="a2" ng-model="questionData.a2" placeholder ="answer 2" required >
-                   </fieldset>
-
-                   <fieldset class="form-group">
-                     <label for="answer3">Answer 3</label>
-                     <input name="a3" <input type="text" class="form-control" id="a3" ng-model="questionData.a3" placeholder ="answer 3" required >
-                   </fieldset>
-
-                  <fieldset class="form-group">
-                     <label for="answer4">Answer 4</label>
-                     <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="answer 4" required >
-                   </fieldset>
-                  <!-- <quiz-question ng-model="questionData"></quiz-question> -->
-<!--                      <button class="addquestion" type="button" ng-click="addNewQuestion()">Add Another Question</button> OR
-
-                      <button type="submit" class="btn btn-primary" >Create Your Quiz</button>
- -->
-
-
+              </a>
+            </div>
           </section>    

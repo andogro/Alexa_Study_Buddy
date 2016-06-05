@@ -4,7 +4,7 @@
 
 
 angular.module('myApp')
-.controller('editQuizController',  ['$scope', '$rootScope', '$routeParams', '$location', 'crudService', 'authService', function($scope, $rootScope, $routeParams, $location, crudService, authService) {
+.controller('editQuizController',  ['$scope', '$rootScope', '$routeParams', '$location', 'crudService', 'authService', '$timeout', function($scope, $rootScope, $routeParams, $location, crudService, authService, $timeout) {
 
     $scope.user = {};
     $scope.user.name = JSON.parse(authService.getUserName());
@@ -88,6 +88,23 @@ angular.module('myApp')
                 console.log('Error: ' + JSON.stringify(error));
             });
       };
+
+ //update alert Quiz
+     $scope.updated = false;
+     $scope.updateButton = function(){
+        $scope.updated = true;
+        $timeout(function () {
+          $scope.updated = false; }, 2000);
+    };
+
+ //update alert Question
+     $scope.updatedq = false;
+     $scope.updateButtonQ = function(){
+        $scope.updatedq = true;
+        $timeout(function () {
+          $scope.updatedq = false; }, 2000);
+    };
+
 
 
 //edit question info

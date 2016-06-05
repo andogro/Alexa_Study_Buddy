@@ -64,9 +64,9 @@ exports.seed = function(knex, Promise) {
         {
           quiz_id: 6,
           question: 'Earth\'s seasons are caused by which of the following',
-          a1: 'The tilt of the earth\'s rotation relative to the ecliptic as earth revolves around the sun',
+          a1: 'The tilt of the earth\'s rotation relative to the eliptic as earth revolves around the sun',
           a2: 'The varying amount of sunspot activity',
-          a3: 'The earth\'s orbit around the sun as an exlipse rather than a circle',
+          a3: 'The earth\'s orbit around the sun as an ellipse rather than a circle',
           a4: 'The rotation of the sun during a 24-hour day'
         }),
     knex('questions').insert(

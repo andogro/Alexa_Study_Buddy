@@ -176,7 +176,7 @@ router.post('/quiz/edit/:id', function(req, res, next) {
 router.post('/question/edit/:id', function(req, res, next) {
 
    var question = {};
-   question.question = req.body.question.question_name;
+   question.question = req.body.question.question;
    question.a1 = req.body.question.a1;
    question.a2 = req.body.question.a2;;
    question.a3 = req.body.question.a3;

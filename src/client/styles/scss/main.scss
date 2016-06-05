@@ -170,7 +170,7 @@ section {
   $ind-question-columns: 3;
   $ind-question-big-columns: 8;
   $ind-question-color: white;
-  // $ind-question-height: 16em;
+  $ind-question-height: 18em;
 
   @include clearfix;
 
@@ -182,9 +182,9 @@ section {
     border-top: 0;
     cursor: pointer;
     float: left;
-    // height: $ind-question-height;
+    height: $ind-question-height;
     outline: none;
-    overflow: hidden;
+    overflow: auto;
     padding: 2em;
     text-align: left;
     text-decoration: none;

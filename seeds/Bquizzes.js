@@ -45,12 +45,20 @@ exports.seed = function(knex, Promise) {
         {
           user_id: 2,
           quiz_name: 'Javascript',
+          quiz_desc: 'Javascript 101',
+          quiz_tags: 'push, pop, slice, splice',
+          created: '2016-03-16 20:07:28-06',
+          last_update: '2016-03-21 20:07:28-06'
+        }),
+    knex('quizzes').insert(
+        {
+          user_id: 3,
+          quiz_name: 'General Science Concepts',
           quiz_desc: 'Javascript is easy if you can learn to tightrope drunk.',
           quiz_tags: 'angular, ember',
           created: '2016-03-16 20:07:28-06',
           last_update: '2016-03-21 20:07:28-06'
         }),
-
     knex('quizzes').insert(
         {
           user_id: 3,

@@ -1,16 +1,12 @@
 
     <section>  
-        <br>
-       Hello {{user.name}}
-       <br><br>
-        Change any of the fields below, then select update to update your quiz.
+       <br>
+       <h3 class ="add-quiz">Hello {{user.name}}<br>
+       Update fields below. Questions are all updated individually, as is quiz info.</h3>
 
+    <div class="flex-boxes">
+      <a href="javascript:void(0)" class="flex-box flex-box-big">
         <form ng-submit="submit()">
-
-                  <button type="submit" class="btn btn-primary" >Update Quiz Info</button>
-
-                  <button class="remove" type="button" ng-click="deleteQuiz(formData.quiz_id)"> Delete this Quiz</button>
-
                   <fieldset class="form-group">
                     <label for="quiz_name">Quiz Name</label>
                     <input name="quiz_name" type="text" class="form-control" id="quiz_name" ng-model="formData.quiz_name" required >
@@ -25,7 +21,15 @@
                     <label for="quiz_tags">Quiz Tags</label>
                     <input name="quiz_tags" type="text" class="form-control" id="quiz_tags" ng-model="formData.quiz_tags" required >
                   </fieldset>
-          </form>
+
+                  <button type="submit" class="button button-add" ng-click="test">Update Quiz Info</button>
+
+                  <button class="button button-remove" type="button" ng-click="deleteQuiz(formData.quiz_id)"> Delete this Quiz</button>
+
+                  <div ng-if="test" class="help-block">Updated!</div>
+         </form>
+        </a>
+      </div>    
 
                   Update Current Questions
 
@@ -58,9 +62,9 @@
                             <input name="a4" <input type="text" class="form-control" id="a4" ng-model="question.a4" placeholder ="answer 4" required >
                           </fieldset>
 
-                            <button class="remove" type="button" ng-click="removeQuestion(question.quest_id, $index)"> delete this question</button>
+                            <button class="button button-remove" type="button" ng-click="removeQuestion(question.quest_id, $index)"> delete this question</button>
                             
-                            <button type="submit" class="btn btn-primary" >Update Question Info</button>
+                            <button type="submit" class="button button-add" >Update Question Info</button>
 
 
                         </form>    

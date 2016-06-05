@@ -1,7 +1,8 @@
 
     <br>
-    <h3>A quiz module for anyone with Alexa</h3>
-    <h2>To get started, say "Alexa, launch study buddy". She will ask you for a quiz number, just say the number and the questions will begin!</h2>
+    <h3 class ="add-quiz">Welcome to Study Buddy, a multiple choice style quiz creator for Alexa and the Amazon Echo.</h3>
+    <h3 class ="add-quiz">To begin a quiz, say "Alexa, Launch Study Buddy". She will ask you for a quiz number, just say the number and the questions will begin!</h3>
+    <h4 class = "add-quiz"> Creating your own quiz is simple - all you need an account (and Alexa). <a href = "/#/login">Register or Login</a> to get started</h4>
 <form class="search-bar" role="search">
   <input type="text" id="search" placeholder="Search for a Quiz" ng-model="search" />
   <button type="submit">
@@ -12,7 +13,7 @@
 <div class="grid-items">
   <a href="#/singlequiz/{{quiz.quiz_id}}" class="grid-item" ng-repeat="quiz in quizData | filter:search">
 
-    <h1>{{quiz.quiz_id}}</h1>
+    <h2>{{quiz.quiz_id}}</h2>
     <h1>{{quiz.quiz_name}}</h1>
     <p> {{quiz.quiz_desc}}<br>
         tags: {{quiz.quiz_tags}}<br>

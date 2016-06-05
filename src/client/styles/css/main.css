@@ -359,7 +359,7 @@ section .container {
   height: 16em;
   outline: none;
   overflow: hidden;
-  padding: 2em;
+  padding: .5em 2em 2em 2em;
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -433,6 +433,13 @@ section .container {
   color: white;
   font-size: 1.3em;
   margin-bottom: 0.4em; }
+
+.grid-items .grid-item h2 {
+  margin-top: 0;
+  font-size: 1.4em;
+  color: #222 !important;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 3px; }
 
 .grid-items .grid-item p {
   color: rgba(255, 255, 255, 0.7);
@@ -803,8 +810,21 @@ form.search-bar {
   padding: 1em;
   height: 50px; }
 
-.button_remove {
-  background: red; }
+.button-remove {
+  background: red;
+  margin-bottom: 1em; }
 
-.button_create {
-  background: green; }
+.button-create {
+  background: green;
+  margin-bottom: 1em; }
+
+.button-add {
+  margin-bottom: 1em; }
+
+.add-quiz {
+  font-size: 1.4em;
+  text-align: center; }
+
+.font-red {
+  color: #5D737E;
+  font-style: italic; }

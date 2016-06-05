@@ -107,6 +107,7 @@ router.post('/quiz/new', function(req, res, next) {
  var questions = req.body.questions;
  quiz.quizname = req.body.quiz.quiz_name;
  quiz.quizdesc = req.body.quiz.quiz_desc;
+ quiz.quiztags = req.body.quiz.quiz_tags;
  quiz.user_id = req.body.quiz.user_id;
  var questions = req.body.questions;
 

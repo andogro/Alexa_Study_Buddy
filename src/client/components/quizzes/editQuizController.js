@@ -33,6 +33,8 @@ angular.module('myApp')
          $scope.formData.quiz_tags = results.data[0].quiz_tags;
          $scope.formData.quiz_id = results.data[0].quiz_id;          
         
+        console.log("this is formdata", JSON.stringify($scope.formData));
+
         for (var i=0; i<results.data.length; i++) {
         var newQuestion = new Question(results.data[i].quest_id, results.data[i].question, results.data[i].a1, results.data[i].a2, results.data[i].a3, results.data[i].a4); 
         $scope.questions.push(newQuestion);

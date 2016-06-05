@@ -69,7 +69,7 @@ section {
     height: $grid-item-height;
     outline: none;
     overflow: hidden;
-    padding: 2em;
+    padding: .5em 2em 2em 2em;
     text-align: center;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
@@ -107,6 +107,14 @@ section {
     font-size: 1.3em;
     margin-bottom: 0.4em;
   }
+
+  .grid-item h2 {
+      margin-top: 0;
+      font-size: 1.4em;
+      color: #222 !important;
+      background-color: transparentize($grid-item-color, 0.6);
+      border-radius: 3px;
+   }
 
   .grid-item p {
     color: transparentize($grid-item-color, 0.3);
@@ -654,14 +662,30 @@ form.search-bar {
 
 ///////buttons
 
-.button_remove {
+.button-remove {
   background: red;
+  margin-bottom: 1em; 
   // font-size:$article-font-size;
 }
 
-.button_create {
+.button-create {
   background: green;
+  margin-bottom: 1em; 
   // font-size:$article-font-size;
+}
+
+.button-add {
+margin-bottom: 1em;  // font-size:$article-font-size;
+}
+
+.add-quiz {
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.font-red {
+  color: $light-blue;
+  font-style: italic;
 }
 
 

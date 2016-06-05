@@ -1,28 +1,31 @@
 
     <section>  
         <br>
-        Hello {{user.name}}
-
-        Add a New Quiz!
-
+         <h3 class ="add-quiz">Hello {{user.name}}, Add a New Quiz!</h3>
 
         <form ng-submit="submit()">
+
+          <div class="flex-boxes">
+            <a href="javascript:void(0)" class="flex-box flex-box-big">
                   <fieldset class="form-group">
-                    <label for="quiz_name">Quiz Name</label>
+                    <label for="quiz_name"><h1 class="flex-title">Quiz Name</h1></label>
                     <input name="quiz_name" type="text" class="form-control" id="quiz_name" ng-model="formData.quiz_name" placeholder="Quiz Name" required >
                   </fieldset>
                  
                  <fieldset class="form-group">
-                   <label for="quiz_desc">Quiz Description</label>
+                   <label for="quiz_desc"><h1 class="flex-title">Quiz Description</h1></label>
                    <textarea name="quiz_desc" class="form-control" id="description" ng-model="formData.quiz_desc" rows="5" required></textarea>
                  </fieldset>
 
                   <fieldset class="form-group">
-                    <label for="quiz_tags">Quiz Tags</label>
+                    <label for="quiz_tags"><h1 class="flex-title">Quiz Tags</h1></label>
                     <input name="quiz_tags" type="text" class="form-control" id="quiz_tags" ng-model="formData.quiz_tags" placeholder="Enter at least one tag, comma separate others" required >
                   </fieldset>
+             </a>
+          </div>
 
-                 <h3>You must add atleast <strong>1</strong> question to create a new quiz. <strong>Always start with the correct answer</strong> , it will be randomized during your Alexa quiz.</h3>
+                 <h3 class ="add-quiz">You must add atleast 1 question below to create a new quiz.<br>
+                 <span class="font-red">Always make Answer 1 the correct answer</span>, it will be randomized during your Alexa quiz.</h3>
            
                   <div class="flex-boxes">
                       <a href="javascript:void(0)" class="flex-box flex-box-mid">
@@ -53,9 +56,9 @@
                          <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="answer 4" required >
                        </fieldset>
                   <!-- <quiz-question ng-model="questionData"></quiz-question> -->
-                     <button class="addquestion" type="button" ng-click="addNewQuestion()">Add Another Question</button> <strong>OR</strong>
+                     <button class="button button-add" type="button" ng-click="addNewQuestion()">Add Another Question</button> <strong>OR</strong>
 
-                      <button type="submit" class="button button_create" >Create Your Quiz</button>
+                      <button type="submit" class="button button-create" >Create Your Quiz</button>
   </a>
   <a href="javascript:void(0)" class="flex-box flex-box-mid">
                  <h1 class="flex-title">Questions You Have Added</h1>
@@ -86,7 +89,7 @@
                             <label for="answer4">Answer 4</label>
                             <input name="a4" <input type="text" class="form-control" id="a4" ng-model="question.a4" placeholder ="answer 4" required >
                           </fieldset>
-<button class="button button_remove" type="button" ng-click="removeQuestion($index)"> Delete this Question</button>
+<button class="button button-remove" type="button" ng-click="removeQuestion($index)"> Delete this Question</button>
 
                      </div>
 <!-- 

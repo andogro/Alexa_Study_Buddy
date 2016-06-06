@@ -18,7 +18,10 @@
           </div>
           <div class="form-actions">
             <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button><br><br>
-            <div ng-if="error" class="help-block">{{error}}</div>
+            
+            <div ng-show="error" class="box-two">{{error}}</div>
+
+<!--             <div ng-if="error" class="help-block">{{error}}</div> -->
             <a href="#/register" class="btn btn-link">No Account Yet? Register</a>
         </div>
       </form>

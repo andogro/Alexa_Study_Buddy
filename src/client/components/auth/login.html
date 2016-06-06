@@ -8,13 +8,13 @@
         <form class="form" ng-submit="login()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
             <label for "email">Email</label>
-            <input ng-model="user.email" name="email" id="email" class="form-control" type="email" required>
-            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+            <input ng-model="user.email" name="email" id="email" class="form-control" type="email" value="andy@andy.com" required>
+<!--             <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span> -->
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="user.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            <input type="password" name="password" id="password" class="form-control" ng-model="user.password" value="andy" required />
+<!--             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span> -->
           </div>
           <div class="form-actions">
             <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button><br><br>

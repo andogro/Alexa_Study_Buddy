@@ -9,6 +9,8 @@
 
   function loginController($rootScope, $scope, $location, authService) {
     $scope.user = {};
+    $scope.user.email = "andy@andy.com"; //this is for demo purposes, 
+    $scope.user.password = "andy";       // delete when app is ready.
 
     $scope.login = function() {
       authService.login($scope.user)

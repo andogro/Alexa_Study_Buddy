@@ -267,7 +267,7 @@ section {
 
     img {
       max-height: $centered-navigation-height;
-      opacity: 0.6;
+      // opacity: 0.6;
       padding: 0.8em 0;
     }
 
@@ -381,7 +381,7 @@ section {
   .logo img {
     margin-bottom: -$centered-navigation-logo-height / 3;
     max-height: $centered-navigation-logo-height;
-    opacity: 0.6;
+    // opacity: 0.6;
   }
 
   
@@ -612,9 +612,9 @@ form.search-bar {
 
     img {
       display: block;
-      height: 3em;
+      height: 4em;
       margin: 0 auto 1em;
-      opacity: 0.4;
+      opacity: 1;
     }
 
     .flex-title {
@@ -726,6 +726,7 @@ form.search-bar {
 
     h1 {
       margin-bottom: 0.9em;
+      font-size: 1.8 em;
     }
 
     h4 {
@@ -852,4 +853,30 @@ form.search-bar {
     transform: scale(1);
   }
 }
+
+.home-img {
+  float: left;
+  margin: -1em 2em 1em 2em;
+}
+
+.home-margin {
+  margin: 2em;
+}
+
+.home-page-content {
+  margin-top: 2em;
+
+    h1 {
+      margin-bottom: 0.9em;
+      font-size: 1.4em;
+    }
+
+    p {
+      color: $base-font-color;
+      line-height: $base-line-height;
+      margin-bottom: 1em;
+      font-size: 1.2em;
+    }
+}
+
 

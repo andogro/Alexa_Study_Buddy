@@ -58,15 +58,6 @@ exports.seed = function(knex, Promise) {
           quiz_tags: 'angular, ember',
           created: '2016-03-16 20:07:28-06',
           last_update: '2016-03-21 20:07:28-06'
-        }),
-    knex('quizzes').insert(
-        {
-          user_id: 3,
-          quiz_name: 'Steve Jobs',
-          quiz_desc: 'Visionary, Lunatic',
-          quiz_tags: 'Steve Jobs, Apple',
-          created: '2016-04-22 20:07:28-06',
-          last_update: '2016-05-02 20:07:28-06'
         })
     );
 };

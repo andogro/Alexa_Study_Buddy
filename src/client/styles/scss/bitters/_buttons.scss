@@ -37,11 +37,23 @@
 .button-remove {
   background: tomato;
   margin-bottom: 1em; 
+
+     &:hover,
+     &:focus {
+    background-color: shade(tomato, 20%) !important;
+    color: #fff;
+  }
 }
 
 .button-create {
   background: green;
   margin-bottom: 1em; 
+
+    &:hover,
+    &:focus {
+    background-color: shade(green, 20%) !important;
+    color: #fff;
+  }
 }
 
 .button-add {

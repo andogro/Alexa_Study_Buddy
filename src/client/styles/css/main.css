@@ -36,10 +36,16 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 .button-remove {
   background: tomato;
   margin-bottom: 1em; }
+  .button-remove:hover, .button-remove:focus {
+    background-color: #cc4f39 !important;
+    color: #fff; }
 
 .button-create {
   background: green;
   margin-bottom: 1em; }
+  .button-create:hover, .button-create:focus {
+    background-color: #006600 !important;
+    color: #fff; }
 
 .button-add {
   margin-bottom: 1em; }

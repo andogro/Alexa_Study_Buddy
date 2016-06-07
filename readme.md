@@ -1,6 +1,6 @@
 ###Alexa Study Buddy (ASB) | alexastudybuddy.com
 
-https://alexa-study-buddy.herokuapp.com/images/alexa_study_buddy.png
+(http://alexa-study-buddy.herokuapp.com/images/alexa_study_buddy.png)
 
 The ASB project was created so that any individual can create a quiz for Alexa. There are many applications for this, the most obvious is for studying for tests. Audio learners appreciate the ability to go over questions out loud, and Alexa makes for the perfect Study Buddy.
 

@@ -13,9 +13,9 @@ angular.module('myApp')
             $scope.userData = results.data;
         })
         .error(function(error) {
-            console.log('Error: ' + error);
+            console.log('Error: ' + error);  // handle errors on page
         });
-});
+    });
 
 })();
 

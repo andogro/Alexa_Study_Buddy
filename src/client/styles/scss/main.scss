@@ -959,4 +959,40 @@ form.search-bar {
     }
 }
 
+.newquiz-center {
 
+}
+
+.newquiz-page-content {
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+    // margin-left: 19em;
+
+    h1 {
+      margin: 0.9em -1em;
+      font-size: 1.4em;
+    }
+
+    li { 
+      margin-bottom: 0.3em;
+      list-style-type: circle;
+      font-size: 1.1em;
+     }
+
+    p {
+      color: $base-font-color;
+      line-height: $base-line-height;
+      margin-bottom: 1em;
+      font-size: 1.2em;
+    }
+    
+    .green {
+      color: green;
+    }
+
+    .blue {
+      color: $blue;
+    }
+
+}

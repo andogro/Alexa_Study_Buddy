@@ -1005,3 +1005,24 @@ form.search-bar {
     line-height: 1.5;
     margin-bottom: 1em;
     font-size: 1.2em; }
+
+.newquiz-page-content {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left; }
+  .newquiz-page-content h1 {
+    margin: 0.9em -1em;
+    font-size: 1.4em; }
+  .newquiz-page-content li {
+    margin-bottom: 0.3em;
+    list-style-type: circle;
+    font-size: 1.1em; }
+  .newquiz-page-content p {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    font-size: 1.2em; }
+  .newquiz-page-content .green {
+    color: green; }
+  .newquiz-page-content .blue {
+    color: #1565c0; }

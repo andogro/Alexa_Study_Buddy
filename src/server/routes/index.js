@@ -56,7 +56,6 @@ router.get('/quizzes/:id', function(req, res, next) {
 var id = req.params.id;
  queries.getUserQuizzes(id)  
  .then(function(results) {
-   console.log("bring back the data");
    res.status(200).json({
       data: results
     });
@@ -85,7 +84,6 @@ router.get('/questions/:id', function(req, res, next) {
 var id = req.params.id;
  queries.getQuestionByQuiz(id)  
  .then(function(results) {
-   console.log("bring back the data"+JSON.stringify(results));
    res.status(200).json({
       data: results
     });
@@ -113,7 +111,6 @@ router.post('/quiz/new', function(req, res, next) {
 
  queries.addQuiz(quiz,questions)
  .then(function(fullresults) {
-      console.log("full results"+JSON.stringify(fullresults));
       res.status(200).json({
       data: fullresults
     });
@@ -133,7 +130,6 @@ router.post('/question/new', function(req, res, next) {
 
  queries.addQuestion(question)
  .then(function(fullresults) {
-      console.log("full results"+fullresults);
       res.status(200).json({
       data: fullresults
     });
@@ -165,7 +161,6 @@ router.post('/quiz/edit/:id', function(req, res, next) {
 
  queries.editQuiz(quiz,id)
  .then(function(fullresults) {
-      console.log("full results"+JSON.stringify(fullresults));
       res.status(200).json({
       data: fullresults
     });
@@ -185,7 +180,6 @@ router.post('/question/edit/:id', function(req, res, next) {
 
  queries.editQuestion(question,id)
  .then(function(fullresults) {
-      console.log("full results from edit question"+JSON.stringify(fullresults));
       res.status(200).json({
       data: fullresults
     });
@@ -311,7 +305,6 @@ router.post('/register', function(req, res, next) {
 
 // hashes a given password
 function hashPassword (password) {
-  console.log("hashing password ", password);
   var salt = bcrypt.genSaltSync(10);
   return bcrypt.hashSync(password, salt);
 }

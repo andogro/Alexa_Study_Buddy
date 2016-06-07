@@ -21,7 +21,6 @@ angular.module('myApp')
 })
 
 .controller('quizzesController', ['$scope', '$routeParams', 'crudService', function($scope, $routeParams, crudService) {
-    console.log('hello');
     $scope.formData = {};
     $scope.userData = {};
     var currId = $routeParams.id;
@@ -29,7 +28,6 @@ angular.module('myApp')
      crudService.getQuizById(currId)
         .success(function(results) {
             $scope.quizData = results.data;
-            console.log("quiz it out"+ JSON.stringify($scope.quizData));
         })
         .error(function(error) {
             console.log('Error: ' + error);

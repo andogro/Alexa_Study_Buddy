@@ -26,8 +26,6 @@ angular.module('myApp')
     $scope.user.name = JSON.parse(authService.getUserName());
     $rootScope.nav = {};
     $rootScope.nav.authenticated = true;
-    // $scope.formData = {};
-    // $scope.userData = {};
 
     }]);
       

@@ -22,7 +22,6 @@
         })
         .catch(function(err) {
           $scope.error = err.data.message; 
-          console.log(err);
         });
     };
   }

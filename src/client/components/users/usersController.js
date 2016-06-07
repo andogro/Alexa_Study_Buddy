@@ -11,7 +11,6 @@ angular.module('myApp')
     $http.get('/users')
         .success(function(results) {
             $scope.userData = results.data;
-            console.log("user side"+ $scope.userData);
         })
         .error(function(error) {
             console.log('Error: ' + error);

@@ -11,7 +11,7 @@
         +'<h1>{{item.quiz_name}}</h1> '
         +'<p> {{item.quiz_desc}}<br> '
         +'tags: {{item.quiz_tags}}<br> '
-        +'by:  {{item.fname}}<br> '
+        // +'by:  {{item.fname}}<br> '
         +'added: {{item.created | date}}</p></a></div>',
         controller: myController,
         controllerAs: 'vm',

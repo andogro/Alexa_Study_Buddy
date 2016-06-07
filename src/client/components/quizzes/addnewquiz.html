@@ -24,45 +24,55 @@
              </div>
           </div>
 
-                 <h3 class ="add-quiz">You must add atleast 1 question below to create a new quiz.<br>
+
+          <div class="home-page-content"> 
+        <h1>You must add atleast 1 question below to create a new quiz.</h1>
+        <p><ul>
+            <li> Always make answer 1 the correct answer, it will be answers will be randomized during the Alexa quiz.</li>
+            <li>Each question must have 4 answers</li>
+            <li>Punctuation matters add a question mark at the end or other punctuation to change how Alexa speaks</li>
+            <li>
+            </p> 
+
+                 <h3 class ="add-quiz"><br>
                  <span class="font-red">Always make Answer 1 the correct answer</span>, it will be randomized during your Alexa quiz.</h3>
            
-                  <div class="flex-boxes">
-                      <div class="flex-box flex-box-mid">
-                       <h1 class="flex-title">Question {{CQ+1}}</h1>
-                        <fieldset class="form-group">
-                          <label for="question">Question </label>
-                          <input name="question" type="text" class="form-control" id="question" ng-model="questionData.question" placeholder="Question" required>
-                         <p ng-show="addQuiz.question.$invalid && !addQuiz.question.$pristine" class="help-block">Question is required.</p>
-                        </fieldset>
+                <div class="flex-boxes">
+                    <div class="flex-box flex-box-mid">
+                     <h1 class="flex-title">Question {{CQ+1}}</h1>
+                      <fieldset class="form-group">
+                        <label for="question">Question </label>
+                        <input name="question" type="text" class="form-control" id="question" ng-model="questionData.question" placeholder="Question" required>
+                       <p ng-show="addQuiz.question.$invalid && !addQuiz.question.$pristine" class="help-block">Question is required.</p>
+                      </fieldset>
 
-
-                        <fieldset class="form-group">
-                          <label for="answer1">Answer 1</label>
-                          <input name="a1" <input type="text" class="form-control" id="a1" ng-model="questionData.a1" placeholder ="Always make this the correct answer" required >
-                        </fieldset>
 
                       <fieldset class="form-group">
-                         <label for="answer2">Answer 2</label>
-                         <input name="a2" <input type="text" class="form-control" id="a2" ng-model="questionData.a2" placeholder ="Answer 2" required >
-                       </fieldset>
+                        <label for="answer1">Answer 1</label>
+                        <input name="a1" <input type="text" class="form-control" id="a1" ng-model="questionData.a1" placeholder ="Always make this the correct answer" required >
+                      </fieldset>
 
-                       <fieldset class="form-group">
-                         <label for="answer3">Answer 3</label>
-                         <input name="a3" <input type="text" class="form-control" id="a3" ng-model="questionData.a3" placeholder ="Answer 3" required >
-                       </fieldset>
+                    <fieldset class="form-group">
+                       <label for="answer2">Answer 2</label>
+                       <input name="a2" <input type="text" class="form-control" id="a2" ng-model="questionData.a2" placeholder ="Answer 2" required >
+                     </fieldset>
 
-                      <fieldset class="form-group">
-                         <label for="answer4">Answer 4</label>
-                         <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="Answer 4" required >
-                       </fieldset>
-                  <!-- <quiz-question ng-model="questionData"></quiz-question> -->
+                     <fieldset class="form-group">
+                       <label for="answer3">Answer 3</label>
+                       <input name="a3" <input type="text" class="form-control" id="a3" ng-model="questionData.a3" placeholder ="Answer 3" required >
+                     </fieldset>
+
+                    <fieldset class="form-group">
+                       <label for="answer4">Answer 4</label>
+                       <input name="a4" <input type="text" class="form-control" id="a4" ng-model="questionData.a4" placeholder ="Answer 4" required >
+                     </fieldset>
+                <!-- <quiz-question ng-model="questionData"></quiz-question> -->
+                   
+                     <button type="submit" ng-disabled="addQuiz.$invalid" class="button button-create" >Create Your Quiz</button>
                      
-                       <button type="submit" ng-disabled="addQuiz.$invalid" class="button button-create" >Create Your Quiz</button>
-                       
-                       <strong>OR</strong>
-                       
-                       <button class="button button-add" type="button" ng-click="addNewQuestion()" ng-disabled="addQuiz.$invalid" >Add Another Question</button> 
+                     <strong>OR</strong>
+                     
+                     <button class="button button-add" type="button" ng-click="addNewQuestion()" ng-disabled="addQuiz.$invalid" >Add Another Question</button> 
 
               </div>
               <div class="flex-box flex-box-mid">
